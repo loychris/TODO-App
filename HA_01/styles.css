@@ -1,0 +1,142 @@
+body {
+    background: #F3F3F3;
+}
+
+header {
+    background-color: #343434;
+    color: #ffffff;
+    text-align: center;
+}
+
+h1 {
+    font-family: 'Ubuntu';
+    font-weight: 700;
+}
+
+.MenuItem {
+    min-width: 200px;
+    height: 40px;
+    padding-top: 10px;
+}
+
+.MenuItem:hover {
+    background-color: #202020;
+}
+
+.MenuItem a {
+    color: #ffffff;
+    text-decoration: none;
+}
+
+
+
+.Row {
+    margin-top: 50px;
+    padding: 5px; 
+}
+
+.TODO {
+    width: 100%;
+    margin: 10px;
+    margin-bottom: 20px;
+    padding: 20px; 
+    box-shadow: 6px 6px 6px rgba(0, 0, 0, 0.25), -6px -6px 6px #FFFFFF;
+    border-radius: 20px;
+    background: #F3F3F3;
+}
+
+.TODO:hover{
+    box-shadow: 10px 10px 10px rgba(0, 0, 0, 0.25), -10px -10px 10px #FFFFFF;
+
+}
+
+.TODOText {
+    font-family: Roboto;
+    font-weight: normal;
+    font-size: 16px;
+    line-height: 19px;
+    margin-bottom: 10px; 
+}
+
+.Deadline{
+    font-family: Roboto;
+    font-weight: normal;
+    font-size: 14px;
+    line-height: 16px;
+    text-align: right;
+    margin-bottom: 15px; 
+    color: #666666;
+
+}
+
+.Progress {
+    font-family: Roboto;
+    font-size: 12px;
+    margin-bottom: 10px;
+    display: flex; 
+    justify-content: space-between;
+}
+
+.ProgressNum {
+    font-family: Roboto;
+    font-weight: normal;
+    font-size: 12px;
+    line-height: 14px;
+    text-align: left;
+}
+
+.ProgressBar {
+    position: relative;
+    width: 86%;
+    height: 12px;
+    margin-bottom: 15px; 
+}
+
+.ProgressBarGrey {
+    position: absolute;
+    top: 0;
+    left: 0;
+    height: 12px;
+    width: 100%;
+    background: #C4C4C4;
+    border-radius: 6px;
+}
+
+.ProgressBarBlue {
+    position: absolute;
+    top: 0;
+    left: 0;
+    z-index: 2;
+    float: left;
+    height: 12px;
+    width: 68%;
+    background: #5BA6FF;
+    border-radius: 6px;
+}
+
+.Buttons {
+    display: flex; 
+    justify-content: space-between;
+}
+
+.Buttons button {
+    text-align: center; 
+    all: unset;
+    height: 30px;
+    padding-left: 15px;
+    padding-right: 15px; 
+    background: #F3F3F3;
+    box-shadow: 4px 4px 4px rgba(0, 0, 0, 0.25), -4px -4px 4px #FFFFFF;
+    border-radius: 20px;
+}
+
+.Buttons button:hover {
+    height: 34px;
+    margin-top: -2px;
+    margin-bottom: -2px;
+    box-shadow: 8px 8px 8px rgba(0, 0, 0, 0.25), -8px -8px 8px #FFFFFF;
+}
+
+.Buttons button:active {
+    box-shadow: 4px 4px 4px rgba(0, 0, 0, 0.25), -4px -4px 4px #FFFFFF;
+}
