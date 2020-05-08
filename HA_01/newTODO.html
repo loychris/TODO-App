@@ -15,7 +15,103 @@
             </ul>
         </nav>
     </header>
-    <h1>TODO Tracker</h1>
-    <p>// new TODO page</p>
+    <h1>New Todo</h1>
 </body>
 </html>
+
+ <div class='container'>
+        <div class='row Row'>
+            <div class='col Col'>
+		<p>Please enter a description of the new task. Be as concise as you can. Make sure the TODO does not already exist.</p>
+	    </div>
+	</div>
+        <div class='row Row'>
+            <div class='col Col'>
+                <form>
+		    <label for="description">Description:</label><br>
+  		    <input type="text" id="description" name="description"><br>
+                </form>
+	    </div>
+	</div>
+	<div class='row'></div>
+	
+        <div class='row Row'>
+            <div class='col Col'>
+		<p>When needs your task to be finished?</p>
+	    </div>
+	</div>
+
+	<div class='row Row'>
+	    <div class='col Col'>
+                <form>
+		    <label for="deadline">Deadline:</label><br>
+  		    <input type="date" id="deadline" name="deadline"><br>
+                </form>
+	    </div>
+	</div>
+	<div class='row'></div>
+	
+	
+        <div class='row Row'>
+            <div class='col Col'>
+		<p>Please define milestones and how much of the task they make up. A milestone is another todo. If it doesn't exist it will be created. If you don't define milestones (you don't have to) the progress of the task will be 0% until the task is marked as finished (see How to edit Todo).</p>
+                <ul>
+                    <li><a href='./editTODO.html'>How to edit TODO</a></li> 
+                </ul>
+	    </div>
+	</div>
+        <div class='row Row'>
+            <div class='col Col'>
+                <form>
+	            <label for="milestone0">Milestone:</label><br>
+  	            <input type="text" id="milestone0" name="milestone0">
+		</form>
+	    </div>
+
+            <div class='col Col'>
+		<form>
+		    <label for="percentage0">Percentage:</label><br>
+		    <input type="number" id="percentage0" name="percentage0" min="1" max="99"><br>
+		</form>
+	    </div>
+	</div>
+
+
+        <div class='row Row'>
+            <div class='col Col'>
+		<form>
+		    <label for="milestone1">Milestone:</label><br>
+  		    <input type="text" id="milestone1" name="milestone1"><br>
+		</form>
+	    </div>
+	    
+            <div class='col Col'>
+		<form>
+		    <label for="percentage1">Percentage:</label><br>
+		    <input type="number" id="percentage1" name="percentage1" min="1" max="99"><br>
+		</form>
+	    </div>
+	</div>
+
+	<div class='row Row'>
+            <div class='col Col'>
+		<form>
+		    <label for="milestone2">Milestone:</label><br>
+  		    <input type="text" id="milestone2" name="milestone2"><br>
+		</form>
+	    </div>
+            <div class='col Col'>
+		<form>
+		    <label for="percentage2">Percentage:</label><br>
+		    <input type="number" id="percentage2" name="percentage2" min="1" max="99"><br> 
+		</form>
+	    </div>
+	</div>
+
+	<div class='row'></div>
+        <div class='row'></div>
+        <div class='row'></div>
+        <div class='row'></div>
+
+ </div>
+
