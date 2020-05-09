@@ -3,6 +3,9 @@
 <head>
     <title>TODO Tracker</title>
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+    <link rel="stylesheet" type="text/css" href="styles.css">
+    <link href="https://fonts.googleapis.com/css2?family=Roboto&family=Ubuntu:wght@700&display=swap" rel="stylesheet">
+
 </head>
 <body>
     <header>
@@ -23,87 +26,36 @@
         <div class='row Row'>
             <div class='col Col'>
 		<p>Please enter a description of the new task. Be as concise as you can. Make sure the TODO does not already exist.</p>
-	    </div>
-	</div>
-        <div class='row Row'>
-            <div class='col Col'>
                 <form>
-		    <label for="description">Description:</label><br>
-  		    <input type="text" id="description" name="description"><br>
-                </form>
-	    </div>
-	</div>
-	<div class='row'></div>
-	
-        <div class='row Row'>
-            <div class='col Col'>
-		<p>When needs your task to be finished?</p>
-	    </div>
-	</div>
+		    <p>
+		        <label for="description">Description:</label><br>
+  		        <input type="text" id="description" name="description"><br>
+		    </p>
 
-	<div class='row Row'>
-	    <div class='col Col'>
-                <form>
-		    <label for="deadline">Deadline:</label><br>
-  		    <input type="date" id="deadline" name="deadline"><br>
-                </form>
-	    </div>
-	</div>
-	<div class='row'></div>
-	
-	
-        <div class='row Row'>
-            <div class='col Col'>
-		<p>Please define milestones and how much of the task they make up. A milestone is another todo. If it doesn't exist it will be created. If you don't define milestones (you don't have to) the progress of the task will be 0% until the task is marked as finished (see How to edit Todo).</p>
-                <ul>
-                    <li><a href='./editTODO.html'>How to edit TODO</a></li> 
-                </ul>
-	    </div>
-	</div>
-        <div class='row Row'>
-            <div class='col Col'>
-                <form>
-	            <label for="milestone0">Milestone:</label><br>
-  	            <input type="text" id="milestone0" name="milestone0">
-		</form>
-	    </div>
+		    <p>
+	    	        <p>When needs your task to be finished?</p>
+		        <label for="deadline">Deadline:</label><br>
+  		        <input type="date" id="deadline" name="deadline"><br>
+		    </p>
 
-            <div class='col Col'>
-		<form>
-		    <label for="percentage0">Percentage:</label><br>
-		    <input type="number" id="percentage0" name="percentage0" min="1" max="99"><br>
-		</form>
-	    </div>
-	</div>
+		    <p>
+		        <p>Please define subtasks and how much of the task they make up. A subtask is another todo. If it doesn't exist it will be created. If you don't define subtasks (you don't have to) the progress of the task will be 0% until the task is marked as finished (see <a href='./editTODO.html'>How to edit TODO</a>).</p>
 
+	                <label for="subtask0">Subtask:</label>
+		        <input type="text" id="subtask0" name="subtask0"><br>
+		        <label for="percentage0">Percentage:</label>
+		        <input type="number" id="percentage0" name="percentage0" min="1" max="99" style="width: 4em"><br>
 
-        <div class='row Row'>
-            <div class='col Col'>
-		<form>
-		    <label for="milestone1">Milestone:</label><br>
-  		    <input type="text" id="milestone1" name="milestone1"><br>
-		</form>
-	    </div>
-	    
-            <div class='col Col'>
-		<form>
-		    <label for="percentage1">Percentage:</label><br>
-		    <input type="number" id="percentage1" name="percentage1" min="1" max="99"><br>
-		</form>
-	    </div>
-	</div>
+		        <label for="subtask1">Subtask:</label>
+  		        <input type="text" id="subtask1" name="subtask1"><br>
+		        <label for="percentage1">Percentage:</label>
+		        <input type="number" id="percentage1" name="percentage1" min="1" max="99" style="width: 4em"><br>
 
-	<div class='row Row'>
-            <div class='col Col'>
-		<form>
-		    <label for="milestone2">Milestone:</label><br>
-  		    <input type="text" id="milestone2" name="milestone2"><br>
-		</form>
-	    </div>
-            <div class='col Col'>
-		<form>
-		    <label for="percentage2">Percentage:</label><br>
-		    <input type="number" id="percentage2" name="percentage2" min="1" max="99"><br> 
+		        <label for="subtask2">Subtask:</label>
+  		        <input type="text" id="subtask2" name="subtask2"><br>
+		        <label for="percentage2">Percentage:</label>
+		        <input type="number" id="percentage2" name="percentage2" min="1" max="99" style="width: 4em"><br> 
+		    </p>
 		</form>
 	    </div>
 	</div>
