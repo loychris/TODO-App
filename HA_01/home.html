@@ -8,30 +8,36 @@
 </head>
 <body>
     <header>
-        <h1>TODO Tracker</h1>
-        <nav class='container'>
-            <div class="row">
-                <div class="col MenuItem">
-                    <a href="./home.html">Home</a>
-                </div>
-                <div class="col MenuItem">
-                    <a href="./newTODO.html">new TODO</a>
-                </div>
-                <div class="col MenuItem">
-                    <a href="./editTODO.html">How to edit TODO</a>
-                </div>
-                <div class="col MenuItem">
-                    <a href="./impressum.html">Impressum</a>
-                </div>
-            </div>  
+        <nav class='navbar navbar-expand-md navbar-dark bg-dark'>
+            <a href='./home.html' class='navbar-brand'><h2>TODO Tracker</h2></a>
+            <button class='navbar-toggler' data-toggle="collapse" data-target='#Menu'>
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class='collapse navbar-collapse' id="Menu">
+                <ul class='navbar-nav'>
+                    <li class="nav-item">
+                        <a href='./home.html' class='nav-link'>Home</a>
+                    </li>
+                    <li class="nav-item">
+                        <a href='./newTODO.html' class='nav-link'>new TODO</a>
+                    </li>
+                    <li class="nav-item">
+                        <a href='./howToEditTODO.html' class='nav-link'>How to edit a TODO</a>
+                    </li>
+                    <li class="nav-item">
+                        <a href='./impressum.html' class='nav-link'>Impressum</a>
+                    </li>
+                </ul>
+            </div>
         </nav>
     </header>
 
-    <div class='container'>
+    <div class='container Main'>
+        <h2>Your TODOs: </h2>
         <div class='row Row'>
             <div class='col Col'>
                 <div class='TODO'>
-                    <div class="TODOText">Support loading of style sheets and embedded CSS.</div>
+                    <div class="TODOText">Support loading of style sheets and embedded CSS</div>
                     <div class="Deadline">Deadline:   2020-05-14</div>
                     <div class="Progress">
                         <div class="ProgressNum">75%</div>
@@ -41,16 +47,14 @@
                         </div>
                     </div>
                     <div class=Buttons>
-                        <button class="EditButton">EDIT</button>
+                        <a href='./editTODO.html'><button class="EditButton">EDIT</button></a>
                         <button class="DeleteButton">DELETE</button>
                     </div>
                 </div>
-
-
             </div>
             <div class='col Col'>
                 <div class='TODO'>
-                    <div class="TODOText">Handle "adjacent sibling" selector combinator.</div>
+                    <div class="TODOText">Handle "adjacent sibling" selector combinator</div>
                     <div class="Deadline">Deadline:   14.05.2020</div>
                     <div class="Progress">
                         <div class="ProgressNum">68%</div>
@@ -60,14 +64,14 @@
                         </div>
                     </div>
                     <div class=Buttons>
-                        <button class="EditButton">EDIT</button>
+                        <a href='./editTODO.html'><button class="EditButton">EDIT</button></a>
                         <button class="DeleteButton">DELETE</button>
                     </div>
                 </div>
             </div>
             <div class='col Col'>
                 <div class='TODO'>
-                    <div class="TODOText">/https: implement certificate caching.</div>
+                    <div class="TODOText">/https: implement certificate caching</div>
                     <div class="Deadline">Deadline:   14.05.2020</div>
                     <div class="Progress">
                         <div class="ProgressNum">68%</div>
@@ -77,14 +81,14 @@
                         </div>
                     </div>
                     <div class=Buttons>
-                        <button class="EditButton">EDIT</button>
+                        <a href='./editTODO.html'><button class="EditButton">EDIT</button></a>
                         <button class="DeleteButton">DELETE</button>
                     </div>
                 </div>
             </div>
             <div class='col Col'>
                 <div class='TODO'>
-                    <div class="TODOText">Image backgrounds.</div>
+                    <div class="TODOText">Image backgrounds</div>
                     <div class="Deadline">Deadline:   14.05.2020</div>
                     <div class="Progress">
                         <div class="ProgressNum">68%</div>
@@ -94,14 +98,14 @@
                         </div>
                     </div>
                     <div class=Buttons>
-                        <button class="EditButton">EDIT</button>
+                        <a href='./editTODO.html'><button class="EditButton">EDIT</button></a>
                         <button class="DeleteButton">DELETE</button>
                     </div>
                 </div>
             </div>
             <div class='col Col'>
                 <div class='TODO'>
-                    <div class="TODOText">Fix anchor scrolling.</div>
+                    <div class="TODOText">Fix anchor scrolling</div>
                     <div class="Deadline">Deadline:   14.05.2020</div>
                     <div class="Progress">
                         <div class="ProgressNum">68%</div>
@@ -111,16 +115,14 @@
                         </div>
                     </div>
                     <div class=Buttons>
-                        <button class="EditButton">EDIT</button>
+                        <a href='./editTODO.html'><button class="EditButton">EDIT</button></a>
                         <button class="DeleteButton">DELETE</button>
                     </div>
                 </div>
-
-
             </div>
             <div class='col Col'>
                 <div class='TODO'>
-                    <div class="TODOText">Fix memory leaks.</div>
+                    <div class="TODOText">Fix memory leaks</div>
                     <div class="Deadline">Deadline:   14.05.2020</div>
                     <div class="Progress">
                         <div class="ProgressNum">68%</div>
@@ -130,14 +132,14 @@
                         </div>
                     </div>
                     <div class=Buttons>
-                        <button class="EditButton">EDIT</button>
+                        <a href='./editTODO.html'><button class="EditButton">EDIT</button></a>
                         <button class="DeleteButton">DELETE</button>
                     </div>
                 </div>
             </div>
             <div class='col Col'>
                 <div class='TODO'>
-                    <div class="TODOText">Remove unreachable code.</div>
+                    <div class="TODOText">Remove unreachable code</div>
                     <div class="Deadline">Deadline:   14.05.2020</div>
                     <div class="Progress">
                         <div class="ProgressNum">68%</div>
@@ -147,14 +149,14 @@
                         </div>
                     </div>
                     <div class=Buttons>
-                        <button class="EditButton">EDIT</button>
+                        <a href='./editTODO.html'><button class="EditButton">EDIT</button></a>
                         <button class="DeleteButton">DELETE</button>
                     </div>
                 </div>
             </div>
             <div class='col Col'>
                 <div class='TODO'>
-                    <div class="TODOText">Javascript.</div>
+                    <div class="TODOText">Javascript</div>
                     <div class="Deadline">Deadline:   14.05.2020</div>
                     <div class="Progress">
                         <div class="ProgressNum">68%</div>
@@ -164,14 +166,14 @@
                         </div>
                     </div>
                     <div class=Buttons>
-                        <button class="EditButton">EDIT</button>
+                        <a href='./editTODO.html'><button class="EditButton">EDIT</button></a>
                         <button class="DeleteButton">DELETE</button>
                     </div>
                 </div>
             </div>
             <div class='col Col'>
                 <div class='TODO'>
-                    <div class="TODOText">Update the GPL copyright note in the source files.</div>
+                    <div class="TODOText">Update the GPL copyright note in the source files</div>
                     <div class="Deadline">Deadline:   14.05.2020</div>
                     <div class="Progress">
                         <div class="ProgressNum">68%</div>
@@ -181,16 +183,14 @@
                         </div>
                     </div>
                     <div class=Buttons>
-                        <button class="EditButton">EDIT</button>
+                        <a href='./editTODO.html'><button class="EditButton">EDIT</button></a>
                         <button class="DeleteButton">DELETE</button>
                     </div>
                 </div>
-
-
             </div>
             <div class='col Col'>
                 <div class='TODO'>
-                    <div class="TODOText">Remove hardcoded UI colors.</div>
+                    <div class="TODOText">Remove hardcoded UI colors</div>
                     <div class="Deadline">Deadline:   14.05.2020</div>
                     <div class="Progress">
                         <div class="ProgressNum">68%</div>
@@ -200,7 +200,7 @@
                         </div>
                     </div>
                     <div class=Buttons>
-                        <button class="EditButton">EDIT</button>
+                        <a href='./editTODO.html'><button class="EditButton">EDIT</button></a>
                         <button class="DeleteButton">DELETE</button>
                     </div>
                 </div>
@@ -217,7 +217,7 @@
                         </div>
                     </div>
                     <div class=Buttons>
-                        <button class="EditButton">EDIT</button>
+                        <a href='./editTODO.html'><button class="EditButton">EDIT</button></a>
                         <button class="DeleteButton">DELETE</button>
                     </div>
                 </div>
@@ -234,18 +234,26 @@
                         </div>
                     </div>
                     <div class=Buttons>
-                        <button class="EditButton">EDIT</button>
-                        <button class="DeleteButton">DELETE</button>
+                        <a href='./editTODO.html'><button class="EditButton">EDIT</button></a>
+                        <a href='' ><button class="DeleteButton">DELETE</button></a>
                     </div>
                 </div>
             </div>
-        </div>
-        <div class='row'></div>
-        <div class='row'></div>
-        <div class='row'></div>
-        <div class='row'></div>
-        <div class='row'></div>
-    </div>
+            <div class='col Col'>
+                <a href='newTODO.html'>
+                    <div class='TODO addTODO'>
+                        <h2>add TODO</h2>
+                        <svg  width="80" height="80" viewBox="0 0 80 80" fill="none" xmlns="http://www.w3.org/2000/svg">
+                            <path id='plus' d="M48 3C48 1.34315 46.6569 0 45 0H35C33.3431 0 32 1.34315 32 3V32H3C1.34315 32 0 33.3431 0 35V45C0 46.6569 1.34315 48 3 48H32V77C32 78.6569 33.3431 80 35 80H45C46.6569 80 48 78.6569 48 77V48H77C78.6569 48 80 46.6569 80 45V35C80 33.3431 78.6569 32 77 32H48V3Z" fill="#c0c0c0"/>
+                        </svg>
+                    </div>
+                </a>
 
+            </div>
+        </div>
+    </div>
+    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js" integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js" integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo" crossorigin="anonymous"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/js/bootstrap.min.js" integrity="sha384-OgVRvuATP1z7JjHLkuOU7Xw704+h835Lr+6QL9UvYjZE3Ipu6Tp75j7Bh/kR0JKI" crossorigin="anonymous"></script>
 </body>
 </html>

@@ -8,49 +8,59 @@
 </head>
 <body>
     <header>
-        <nav>
-            <ul>
-                <li><a href='./home.html'>Home</a></li> 
-                <li><a href='./newTODO.html'>new TODO</a></li> 
-                <li><a href='./editTODO.html'>How to edit TODO</a></li> 
-                <li><a href='./impressum.html'>Impressum</a></li> 
-            </ul>
+        <nav class='navbar navbar-expand-md navbar-dark bg-dark'>
+            <a href='./home.html' class='navbar-brand'><h2>TODO Tracker</h2></a>
+            <button class='navbar-toggler' data-toggle="collapse" data-target='#Menu'>
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class='collapse navbar-collapse' id="Menu">
+                <ul class='navbar-nav'>
+                    <li class="nav-item">
+                        <a href='./home.html' class='nav-link'>Home</a>
+                    </li>
+                    <li class="nav-item">
+                        <a href='./newTODO.html' class='nav-link'>new TODO</a>
+                    </li>
+                    <li class="nav-item">
+                        <a href='./howToEditTODO.html' class='nav-link'>How to edit a TODO</a>
+                    </li>
+                    <li class="nav-item">
+                        <a href='./impressum.html' class='nav-link'>Impressum</a>
+                    </li>
+                </ul>
+            </div>
         </nav>
     </header>
-    <h3>Impressum</h3>
-    <div class='container'>
-	<div class="row Row">
-	    <div class="col-8 Col">
-		<h3>Exclusion of Liability</h3>
-		    <h4>Liability for content</h4>
-		        <p> The content of our pages was prepared with the utmost care. However, we assume no liability for the correctness, completeness and up-to-dateness of this content. As a service provider, we are responsible for our own content on these pages under general law as per para. 7 section 1 of TMG. However, according to paras. 8 to 10 of TMG, as a service provider we are not obligated to monitor transferred or stored third-party information or investigate circumstances that are indicative of unlawful activity. Obligations to remove or block the use of information as per general law remain unaffected by this. However, any such liability is only possible from the time of knowing of a specific infringement of the law. Upon becoming aware of such infringements of the law, we will remove this content immediately.</p>
-		    <h4>Liability for links</h4>
-		        <p>Our website contains links to the external websites of third parties upon whose content we have no influence. Therefore we cannot assume any liability for this third-party content. The content of the linked pages is always the responsibility of the respective provider or operator of those pages. At the time of linking, the linked pages were checked for any possible legal infringements. Unlawful content could not be detected at the time of the linking. However, without any specific evidence of a legal infringement, it is not reasonable to expect the content of the linked pages to be checked continually. Upon becoming aware of legal infringements, we will remove such links immediately.</p>
-	    </div>
-	    <div class="col-4 Col">
-			
-		<h2>ADDRESS</h2>
-		    <address>
-		    Technische Universität Berlin<br>
-		    Straße des 17. Juni 135<br>
-		    10623 Berlin<br>
-		    </address>
-
-		<h2>CONTACT</h2> 
-		    <address>
-		    Email: request@TODOtracker.org<br>
-		    Phone: +49 30 123 456 789<br>
-		    </address>
-
-		<p>
-		Company headquarters: Berlin<br>
-		AG Berlin-Charlottenburg HRB 123456<br>
-		VAT No.: DE123456789<br>
-		CEOs: Christoph Loy and Antonia Priesnitz<br>
-		</p>
-
-	    </div>
-	</div>
+    <div class='container Main'>
+		<h2>Impressum</h2>
+		<div class="row Row">
+			<div class="col-8 Col">
+				<h3>Exclusion of Liability</h3>
+				<h4>Liability for content</h4>
+				<p> The content of our pages was prepared with the utmost care. However, we assume no liability for the correctness, completeness and up-to-dateness of this content. As a service provider, we are responsible for our own content on these pages under general law as per para. 7 section 1 of TMG. However, according to paras. 8 to 10 of TMG, as a service provider we are not obligated to monitor transferred or stored third-party information or investigate circumstances that are indicative of unlawful activity. Obligations to remove or block the use of information as per general law remain unaffected by this. However, any such liability is only possible from the time of knowing of a specific infringement of the law. Upon becoming aware of such infringements of the law, we will remove this content immediately.</p>
+				<h4>Liability for links</h4>
+				<p>Our website contains links to the external websites of third parties upon whose content we have no influence. Therefore we cannot assume any liability for this third-party content. The content of the linked pages is always the responsibility of the respective provider or operator of those pages. At the time of linking, the linked pages were checked for any possible legal infringements. Unlawful content could not be detected at the time of the linking. However, without any specific evidence of a legal infringement, it is not reasonable to expect the content of the linked pages to be checked continually. Upon becoming aware of legal infringements, we will remove such links immediately.</p>
+			</div>
+			<div class="col-4 Col">
+				<h3>ADDRESS</h3>
+				<address>
+					Technische Universität Berlin<br>
+					Straße des 17. Juni 135<br>
+					10623 Berlin<br>
+				</address>
+				<h3>CONTACT</h3> 
+				<address>
+					Email: request@TODOtracker.org<br>
+					Phone: +49 30 123 456 789<br>
+				</address>
+				<p>
+					Company headquarters: Berlin<br>
+					AG Berlin-Charlottenburg HRB 123456<br>
+					VAT No.: DE123456789<br>
+					CEOs: Christoph Loy and Antonia Priesnitz<br>
+				</p>
+			</div>
+		</div>
     </div>
 </body>
 </html>

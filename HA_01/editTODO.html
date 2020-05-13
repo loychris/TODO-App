@@ -1,30 +1,77 @@
 <!DOCTYPE html>
 <html>
-    <head>
-        <title>TODO Tracker</title>
-        <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
-	<link rel="stylesheet" type="text/css" href="styles.css">
-        <link href="https://fonts.googleapis.com/css2?family=Roboto&family=Ubuntu:wght@700&display=swap" rel="stylesheet">
-
-    </head>
-    <body>
-        <header>
-            <nav>
-                <ul>
-                   <li><a href='./home.html'>Home</a></li> 
-                   <li><a href='./newTODO.html'>new TODO</a></li> 
-                   <li><a href='./editTODO.html'>How to edit TODO</a></li> 
-                   <li><a href='./impressum.html'>Impressum</a></li> 
+<head>
+    <title>TODO Tracker</title>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+    <link rel="stylesheet" type="text/css" href="styles.css">
+    <link href="https://fonts.googleapis.com/css2?family=Roboto&family=Ubuntu:wght@700&display=swap" rel="stylesheet">
+</head>
+<body>
+    <header>
+        <nav class='navbar navbar-expand-md navbar-dark bg-dark'>
+            <a href='./home.html' class='navbar-brand'><h2>TODO Tracker</h2></a>
+            <button class='navbar-toggler' data-toggle="collapse" data-target='#Menu'>
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class='collapse navbar-collapse' id="Menu">
+                <ul class='navbar-nav'>
+                    <li class="nav-item">
+                        <a href='./home.html' class='nav-link'>Home</a>
+                    </li>
+                    <li class="nav-item">
+                        <a href='./newTODO.html' class='nav-link'>new TODO</a>
+                    </li>
+                    <li class="nav-item">
+                        <a href='./howToEditTODO.html' class='nav-link'>How to edit a TODO</a>
+                    </li>
+                    <li class="nav-item">
+                        <a href='./impressum.html' class='nav-link'>Impressum</a>
+                    </li>
                 </ul>
-            </nav>
-        </header>
-        <h1>edit TODO </h1>
-	<ol>
-	    <li>Go to the main page and klick the EDIT button of the TODO you want to edit.</li>
-	    <li>Now you can edit the TODO text and the deadline or add a subtask.</li>
-	    <li>If you add a subtask, please adjust the percentages of the existing subtasks so they add up to 100%.</li>
-	    <li>Finally, klick the SUBMIT button.</li>
-	    <li>You should now see your changes on the main page. If you have added a subtask, the progress bar should or should not have changed, depending on the percentage adjustments you have made.</li>
-	</ol>
-    </body>
+            </div>
+        </nav>
+    </header>
+    <div class='container Main'>
+		<h2>Edit TODO</h2>
+		<div class="newTODO">
+			<form>
+				<div>
+					<label for="description">Description:</label><br>
+					<input type="text" id="description" name="description" maxlength="159" value="Skalierbare Systeme Hausaufgabe 1"><br>
+				</div>
+				<div>
+					<label for="deadline">Deadline:</label><br>
+					<input type="date" id="deadline" name="deadline" value="2020-05-14"><br>
+				</div>
+				<div class="SubTasks">
+					<h4>Add subtasks (optional) </h4> 
+					<p>If you don't (you don't have to) the progress of the task will be 0% until the task is marked as finished (see <a href='./editTODO.html'>How to edit TODO</a>).</p>
+					<div class="Subtask">
+						<label for="subtask0">Subtask:</label>
+						<input type="text" id="subtask0" name="subtask0" maxlength="159" value="Struktur der Webseite festlegen"><br>
+						<label for="percentage0">Percentage:</label>
+						<input type="number" id="percentage0" name="percentage0" min="1" max="99" style="width: 4em"  value="33"><br>	
+					</div>
+					<div class="Subtask">
+						<label for="subtask1">Subtask:</label>
+						<input type="text" id="subtask1" name="subtask1" maxlength="159" value="Bootstrap einbinden"><br>
+						<label for="percentage1">Percentage:</label>
+						<input type="number" id="percentage1" name="percentage1" min="1" max="99" style="width: 4em"  value="33"><br>	
+					</div>
+					<div class="Subtask">
+						<label for="subtask2">Subtask:</label>
+						<input type="text" id="subtask2" name="subtask2" maxlength="159" value="Webseite responsive gestalten"><br>
+						<label for="percentage2">Percentage:</label>
+						<input type="number" id="percentage2" name="percentage2" min="1" max="99" style="width: 4em"  value="33"><br> 
+					</div>
+					<div class="Submit">
+                        <input type="submit" value="SAVE CHANGES">
+                        <button>discard changes</button>
+					</div>
+				</div>
+			</form>
+		</div>
+		
+	</div>
+</body>
 </html>
