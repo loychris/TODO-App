@@ -23,8 +23,6 @@ header a {
     text-decoration: none!important;
 }
 
-
-
 h1, h2, h3, h4, input, .TODOText {
     font-family: 'Ubuntu';
     font-weight: 700;
@@ -47,9 +45,7 @@ label {
 }
 
 .TODO {
-    /* width: 100%; */
-    /* margin: 5px; */
-    margin-bottom: 20px;
+    margin-bottom: 40px;
     padding: 20px; 
     box-shadow: 6px 6px 6px rgba(0, 0, 0, 0.25), -6px -6px 6px #FFFFFF;
     border-radius: 20px;
@@ -73,8 +69,8 @@ label {
 
 .TODOText {
     font-weight: 300;
-    font-size: 16px;
-    line-height: 19px;
+    font-size: 20px;
+    line-height: 22px;
     margin-bottom: 10px; 
 }
 
@@ -132,6 +128,15 @@ label {
     width: 68%;
     background: #5BA6FF;
     border-radius: 6px;
+}
+
+.Subtasks {
+    margin-left: -20px;
+    margin-right: -20px;
+    margin-bottom: 20px;
+    padding-left: 20px;
+    padding-right: 20px;
+
 }
 
 .Buttons {
@@ -334,11 +339,42 @@ input[type=range]{
     cursor: pointer;
 }
 
-.Checkbox {
+.CheckboxSmall {
     position: relative; 
-    width: 50px;
-    height: 50px;
-    margin: auto;
+    width: 20px;
+    height: 20px;
+    margin-right: 10px;
+    float: left;
+}
+
+.CheckboxSmall label {
+    width: 20px;
+    height: 20px;
+    margin-left: auto;
+    margin-bottom: 4px; 
+    cursor: pointer;
+    position: absolute;
+    top: 0;
+    left: 0;
+    background: #EEEEEE;
+    border-radius: 50px;
+    box-shadow: inset 4px 4px 4px rgba(0, 0, 0, 0.25), inset -4px -4px 4px #FFFFFF;
+}
+
+.CheckboxSmall label:after {
+    content: '';
+    width: 12px;
+    height: 7px;
+    position: absolute;
+    top: 6px;
+    left: 4px;
+    border: 3px solid #333;
+    border-top: none;
+    border-right: none;
+    background: transparent;
+    opacity: 0;
+    -webkit-transform: rotate(-45deg);
+            transform: rotate(-45deg);
 }
 
 .Checkbox label {
@@ -356,6 +392,13 @@ input[type=range]{
     box-shadow: inset 4px 4px 4px rgba(0, 0, 0, 0.25), inset -4px -4px 4px #FFFFFF;
 }
 
+.Checkbox {
+    position: relative; 
+    width: 50px;
+    height: 50px;
+    margin: auto;
+}
+
 .Checkbox label:after {
     content: '';
     width: 30px;
@@ -371,14 +414,14 @@ input[type=range]{
     -webkit-transform: rotate(-45deg);
             transform: rotate(-45deg);
 }
-.Checkbox label:hover::after {
+.Checkbox label:hover::after, .CheckboxSmall label:hover::after {
     opacity: 0.5;
 }
 
-.Checkbox input[type=checkbox] {
+.Checkbox input[type=checkbox], .CheckboxSmall input[type=checkbox]  {
     visibility: hidden;
 }
 
-.Checkbox input[type=checkbox]:checked + label:after {
+.Checkbox input[type=checkbox]:checked + label:after, .CheckboxSmall input[type=checkbox]:checked + label:after {
     opacity: 1;
 }
