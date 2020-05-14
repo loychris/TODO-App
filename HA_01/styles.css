@@ -1,5 +1,5 @@
 body {
-    background: #F3F3F3;
+    background: #eeeeee;
 }
 
 a:hover {
@@ -23,10 +23,17 @@ header a {
     text-decoration: none!important;
 }
 
-h2 {
+
+
+h1, h2, h3, h4, input, .TODOText {
     font-family: 'Ubuntu';
     font-weight: 700;
     margin-right: 10px;
+}
+
+label {
+    color: #777e86;
+    margin-bottom: 0px;
 }
 
 .Main {
@@ -35,16 +42,25 @@ h2 {
 
 .Row {
     padding: 5px; 
+    margin-bottom: 10px; 
 }
 
 .TODO {
-    width: 100%;
-    margin: 10px;
+    /* width: 100%; */
+    /* margin: 5px; */
     margin-bottom: 20px;
     padding: 20px; 
     box-shadow: 6px 6px 6px rgba(0, 0, 0, 0.25), -6px -6px 6px #FFFFFF;
     border-radius: 20px;
-    background: #F3F3F3;
+    background: #eeeeee;
+}
+
+.newTODO {
+    box-shadow: 6px 6px 6px rgba(0, 0, 0, 0.25), -6px -6px 6px #FFFFFF;
+    border-radius: 20px;
+    padding: 20px; 
+    margin-top: 20px;
+    background: #eeeeee;
 }
 
 .TODO:hover{
@@ -53,8 +69,7 @@ h2 {
 }
 
 .TODOText {
-    font-family: Roboto;
-    font-weight: normal;
+    font-weight: 300;
     font-size: 16px;
     line-height: 19px;
     margin-bottom: 10px; 
@@ -129,7 +144,7 @@ h2 {
     height: 30px;
     padding-left: 15px;
     padding-right: 15px; 
-    background: #F3F3F3;
+    background: #eeeeee;
     box-shadow: 4px 4px 4px rgba(0, 0, 0, 0.25), -4px -4px 4px #FFFFFF;
     border-radius: 20px;
 }
@@ -142,7 +157,7 @@ h2 {
     height: 30px;
     padding-left: 15px;
     padding-right: 15px; 
-    background: #F3F3F3;
+    background: #eeeeee;
     box-shadow: 4px 4px 4px rgba(0, 0, 0, 0.25), -4px -4px 4px #FFFFFF;
     border-radius: 20px;
 }
@@ -162,48 +177,56 @@ h2 {
     color: red;
 }
 
-.addTODO {
+.Add {
+    cursor: pointer;
     text-align: center; 
     color: #c0c0c0;
 }
 
-.addTODO:hover {
+.Add:hover {
     color: #53595f;
     text-decoration: none;
 }
 
-.addTODO:hover #plus {
+.Add:hover #plus {
     fill: #53595f;
 }
 
-/*      new TODO       */
+/*      newTODO  /  editTODO     */
 
-.newTODO {
+
+
+.Subtask {
     box-shadow: 6px 6px 6px rgba(0, 0, 0, 0.25), -6px -6px 6px #FFFFFF;
-    border-radius: 20px;
-    padding: 20px; 
-    margin-top: 20px;
-    background: #F3F3F3;
+    border-radius: 9px;
+    padding: 10px;
+    margin-bottom: 25px; 
+    background-color: #eeeeee;
+    position: relative; 
 }
 
+.X {
+    position: absolute;
+    right: 3px;
+    top: 3px; 
+}
+
+.X:hover path{
+    fill: #000000; 
+}
 
 input {
     background-color: #ffffff;
+    box-shadow: inset 3px 3px 3px rgba(0, 0, 0, 0.25), inset -3px -3px 3px #FFFFFF;
     border-radius: 15px; 
-    padding-left: 4px;
-    padding-right: 4px; 
+    font-size: 15pt;
+    border: none;
+    padding-left: 10px;
+    padding-right: 10px; 
 }
 
 .SubTasks {
-    margin-top: 30px; 
-}
-
-.Subtask {
-    margin-bottom: 25px; 
-}
-
-label {
-    margin-bottom: 0px;
+    margin-top: 50px; 
 }
 
 #description {
@@ -211,14 +234,18 @@ label {
     font-family: "Ubuntu";
 }
 
-input[type=text]{
+input[type=text], input[type=textarea]{
     width: 100%;
+    padding-top: 4px;
+    padding-bottom: 4px;  
+
     margin-bottom: 10px; 
 }
 
-.Submit {
-    display: felx; 
+input[type=textarea]{
+    border-radius: 20px;
 }
+
 
 input[type=submit]{
     text-decoration: none;
@@ -229,7 +256,70 @@ input[type=submit]{
     padding-left: 15px;
     padding-right: 15px; 
     margin-right: 15px; 
-    background: rgb(87, 247, 140);
+    background: rgb(150, 248, 159);
     box-shadow: 4px 4px 4px rgba(0, 0, 0, 0.25), -4px -4px 4px #FFFFFF;
     border-radius: 20px;
+}
+
+.Submit {
+    display: felx; 
+}
+
+.RangeContainer {
+    text-align: center;
+    position: relative;
+    height: 40px;
+    width: 100%;
+    display: block; 
+}
+
+.RangeOutput {
+    float: left; 
+    position: absolute;
+    width: 100%;
+    pointer-events:none;
+} 
+
+.RangeInput {
+    position: absolute; 
+    left: 5px;
+    right: 5px;
+}
+
+input[type=range]{
+    box-shadow: none;
+    padding: 0px;
+}
+
+.Slider {
+    -webkit-appearance: none;
+    width: 100%;
+    height: 25px;
+    background: #d3d3d3;
+    outline: none;
+    opacity: 0.7;
+    -webkit-transition: .2s;
+    transition: opacity .2s;
+}
+  
+.Slider:hover {
+    opacity: 1;
+}
+  
+.Slider::-webkit-slider-thumb {
+    -webkit-appearance: none;
+    appearance: none;
+    width: 40px;
+    height: 40px;
+    border-radius: 100%; 
+    background: #5BA6FF;
+    cursor: pointer;
+}
+  
+.Slider::-moz-range-thumb {
+    width: 40px;
+    height: 40px;
+    border-radius: 100%; 
+    background: #5BA6FF;
+    cursor: pointer;
 }

@@ -32,37 +32,92 @@
         </nav>
     </header>
     <div class='container Main'>
-		<h2>Edit TODO</h2>
+		<h1>Edit TODO</h1>
 		<div class="newTODO">
-			<form>
-				<div>
-					<label for="description">Description:</label><br>
-					<input type="text" id="description" name="description" maxlength="159" value="Skalierbare Systeme Hausaufgabe 1"><br>
+			<form oninput="progressOutput.value=progressInput.value">
+				<div class="row Row">
+					<label
+						for="description">Description:</label><br>
+					<input 
+						type="textarea" 
+						id="description" 
+						name="description"
+						rows="3" 
+						cols="52"
+						maxlength="159" 
+						value="Skalierbare Systeme Hausaufgabe 1"/>
 				</div>
-				<div>
+				<div class="row Row">
+					<label for="progressInput">Progress:</label>
+					<div class="RangeContainer">
+						<div class="RangeInput">
+							<input 
+							class="Slider" 
+							type='range' 
+							id="progressInput"
+							name="progressInput" 
+							value="35"
+							min="0" 
+							max="100">
+						</div>
+						<div class="RangeOutput">
+							<nobr>
+								<output name="progressOutput">35</output>%
+							</nobr>
+						</div>
+					</div>
+				</div>
+				
+				<div class="row Row">
 					<label for="deadline">Deadline:</label><br>
-					<input type="date" id="deadline" name="deadline" value="2020-05-14"><br>
+					<input 
+					type="date" 
+					id="deadline" 
+					name="deadline" 
+					value="2020-05-14">
 				</div>
 				<div class="SubTasks">
 					<h4>Add subtasks (optional) </h4> 
 					<p>If you don't (you don't have to) the progress of the task will be 0% until the task is marked as finished (see <a href='./editTODO.html'>How to edit TODO</a>).</p>
 					<div class="Subtask">
+						<svg class="X" width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+							<g id="close_24px">
+								<path id="icon/navigation/close_24px" d="M19 6.41L17.59 5L12 10.59L6.41 5L5 6.41L10.59 12L5 17.59L6.41 19L12 13.41L17.59 19L19 17.59L13.41 12L19 6.41Z" fill="#777e86" fill-opacity="0.54"/>
+							</g>
+						</svg>
 						<label for="subtask0">Subtask:</label>
 						<input type="text" id="subtask0" name="subtask0" maxlength="159" value="Struktur der Webseite festlegen"><br>
 						<label for="percentage0">Percentage:</label>
 						<input type="number" id="percentage0" name="percentage0" min="1" max="99" style="width: 4em"  value="33"><br>	
 					</div>
 					<div class="Subtask">
+						<svg class="X" width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+							<g id="close_24px">
+								<path id="icon/navigation/close_24px" d="M19 6.41L17.59 5L12 10.59L6.41 5L5 6.41L10.59 12L5 17.59L6.41 19L12 13.41L17.59 19L19 17.59L13.41 12L19 6.41Z" fill="#777e86" fill-opacity="0.54"/>
+							</g>
+						</svg>
 						<label for="subtask1">Subtask:</label>
 						<input type="text" id="subtask1" name="subtask1" maxlength="159" value="Bootstrap einbinden"><br>
 						<label for="percentage1">Percentage:</label>
 						<input type="number" id="percentage1" name="percentage1" min="1" max="99" style="width: 4em"  value="33"><br>	
 					</div>
 					<div class="Subtask">
+						<svg class="X" width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+							<g id="close_24px">
+								<path id="icon/navigation/close_24px" d="M19 6.41L17.59 5L12 10.59L6.41 5L5 6.41L10.59 12L5 17.59L6.41 19L12 13.41L17.59 19L19 17.59L13.41 12L19 6.41Z" fill="#777e86" fill-opacity="0.54"/>
+							</g>
+						</svg>
 						<label for="subtask2">Subtask:</label>
 						<input type="text" id="subtask2" name="subtask2" maxlength="159" value="Webseite responsive gestalten"><br>
 						<label for="percentage2">Percentage:</label>
 						<input type="number" id="percentage2" name="percentage2" min="1" max="99" style="width: 4em"  value="33"><br> 
+					</div>
+					<div class="Add">
+						<h3>Add Subtask</h3>
+						<svg width="40" height="40" viewBox="0 0 40 40" fill="none" xmlns="http://www.w3.org/2000/svg">
+							<path id="plus" d="M24 3C24 1.34315 22.6569 0 21 0H19C17.3431 0 16 1.34315 16 3V16H3C1.34315 16 0 17.3431 0 19V21C0 22.6569 1.34315 24 3 24H16V37C16 38.6569 17.3431 40 19 40H21C22.6569 40 24 38.6569 24 37V24H37C38.6569 24 40 22.6569 40 21V19C40 17.3431 38.6569 16 37 16H24V3Z" fill="#c0c0c0"/>
+						</svg>
+
 					</div>
 					<div class="Submit">
                         <input type="submit" value="SAVE CHANGES">
