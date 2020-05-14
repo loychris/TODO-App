@@ -12,6 +12,11 @@ a {
 }
 
 header {
+    position: fixed;
+    top: 0px;
+    left: 0px;
+    right: 0px; 
+    z-index: 1000;
     background-color: #343434;
     color: #ffffff;
     text-align: center;
@@ -36,7 +41,7 @@ label {
 }
 
 .Main {
-    margin-top: 30px; 
+    margin-top: 86px; 
 }
 
 .Row {
@@ -46,6 +51,8 @@ label {
 
 .TODO {
     margin-bottom: 40px;
+    margin-left: 4px;
+    margin-right: 4px;
     padding: 20px; 
     box-shadow: 6px 6px 6px rgba(0, 0, 0, 0.25), -6px -6px 6px #FFFFFF;
     border-radius: 20px;
@@ -204,7 +211,7 @@ label {
 /*      newTODO  /  editTODO     */
 
 .Subtask {
-    box-shadow: 6px 6px 6px rgba(0, 0, 0, 0.25), -6px -6px 6px #FFFFFF;
+    box-shadow: 4px 4px 4px rgba(0, 0, 0, 0.25), -4px -4px 4px #FFFFFF;
     border-radius: 9px;
     padding: 10px;
     margin-left: 0px;
@@ -380,8 +387,7 @@ input[type=range]{
 .Checkbox label {
     width: 50px;
     height: 50px;
-    margin-left: auto;
-    margin-top: 25px;
+    margin-right: auto;
     margin-bottom: 25px; 
     cursor: pointer;
     position: absolute;
@@ -394,9 +400,13 @@ input[type=range]{
 
 .Checkbox {
     position: relative; 
+    margin-left: auto;
+    margin-right: auto;
+    top: 50%;
+    -ms-transform: translateY(-50%);
+    transform: translateY(-50%);
     width: 50px;
     height: 50px;
-    margin: auto;
 }
 
 .Checkbox label:after {
