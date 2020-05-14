@@ -56,13 +56,13 @@
 							type='range' 
 							id="progressInput"
 							name="progressInput" 
-							value="35"
+							value="33"
 							min="0" 
 							max="100">
 						</div>
 						<div class="RangeOutput">
 							<nobr>
-								<output name="progressOutput">35</output>%
+								<output name="progressOutput">33</output>%
 							</nobr>
 						</div>
 					</div>
@@ -78,51 +78,62 @@
 				</div>
 				<div class="SubTasks">
 					<h4>Add subtasks (optional) </h4> 
-					<p>If you don't (you don't have to) the progress of the task will be 0% until the task is marked as finished (see <a href='./editTODO.html'>How to edit TODO</a>).</p>
-					<div class="Subtask">
-						<svg class="X" width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
-							<g id="close_24px">
-								<path id="icon/navigation/close_24px" d="M19 6.41L17.59 5L12 10.59L6.41 5L5 6.41L10.59 12L5 17.59L6.41 19L12 13.41L17.59 19L19 17.59L13.41 12L19 6.41Z" fill="#777e86" fill-opacity="0.54"/>
-							</g>
-						</svg>
-						<label for="subtask0">Subtask:</label>
-						<input type="text" id="subtask0" name="subtask0" maxlength="159" value="Struktur der Webseite festlegen"><br>
-						<label for="percentage0">Percentage:</label>
-						<input type="number" id="percentage0" name="percentage0" min="1" max="99" style="width: 4em"  value="33"><br>	
+					<p>If you don't (you don't have to) the progress of the task will be 0% until the task is marked as finished (see <a href='./howToEditTODO.html'>How to edit TODO</a>).</p>
+					<div class="row Subtask">
+						<svg class="X" width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg"><g id="close_24px"><path id="icon/navigation/close_24px" d="M19 6.41L17.59 5L12 10.59L6.41 5L5 6.41L10.59 12L5 17.59L6.41 19L12 13.41L17.59 19L19 17.59L13.41 12L19 6.41Z" fill="#777e86" fill-opacity="0.54"/></g></svg>
+						<div class="col-md-1 col-xs-12">
+							<div class="Checkbox">
+								<input type="checkbox" value="None" id="RoundCheckbox0" name="check" checked />
+								<label for="RoundCheckbox0"></label>
+							</div>
+						</div>
+						<div class="col-md-11 col-xs-12 Done">
+							<label for="subtask0">Subtask:</label>
+							<input type="text" id="subtask0" name="subtask0" maxlength="159" value="Struktur der Webseite festlegen"><br>
+							<label for="percentage0">Percentage:</label>
+							<input type="number" id="percentage0" name="percentage0" min="1" max="99" value="33">%<br>		
+						</div>
 					</div>
-					<div class="Subtask">
-						<svg class="X" width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
-							<g id="close_24px">
-								<path id="icon/navigation/close_24px" d="M19 6.41L17.59 5L12 10.59L6.41 5L5 6.41L10.59 12L5 17.59L6.41 19L12 13.41L17.59 19L19 17.59L13.41 12L19 6.41Z" fill="#777e86" fill-opacity="0.54"/>
-							</g>
-						</svg>
-						<label for="subtask1">Subtask:</label>
-						<input type="text" id="subtask1" name="subtask1" maxlength="159" value="Bootstrap einbinden"><br>
-						<label for="percentage1">Percentage:</label>
-						<input type="number" id="percentage1" name="percentage1" min="1" max="99" style="width: 4em"  value="33"><br>	
+					<div class="row Subtask">
+						<svg class="X" width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg"><g id="close_24px"><path id="icon/navigation/close_24px" d="M19 6.41L17.59 5L12 10.59L6.41 5L5 6.41L10.59 12L5 17.59L6.41 19L12 13.41L17.59 19L19 17.59L13.41 12L19 6.41Z" fill="#777e86" fill-opacity="0.54"/></g></svg>
+						<div class="col-md-1 col-xs-12">
+							<div class="Checkbox">
+								<input type="checkbox" value="None" id="RoundCheckbox1" name="check" />
+								<label for="RoundCheckbox1"></label>
+							</div>
+						</div>
+						<div class="col-md-11 col-xs-12">
+							<label for="subtask0">Subtask:</label>
+							<input type="text" id="subtask0" name="subtask0" maxlength="159" value="Bootstrap einbinden"><br>
+							<label for="percentage0">Percentage:</label>
+							<input type="number" id="percentage0" name="percentage0" min="1" max="99" value="33">%<br>		
+						</div>
 					</div>
-					<div class="Subtask">
-						<svg class="X" width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
-							<g id="close_24px">
-								<path id="icon/navigation/close_24px" d="M19 6.41L17.59 5L12 10.59L6.41 5L5 6.41L10.59 12L5 17.59L6.41 19L12 13.41L17.59 19L19 17.59L13.41 12L19 6.41Z" fill="#777e86" fill-opacity="0.54"/>
-							</g>
-						</svg>
-						<label for="subtask2">Subtask:</label>
-						<input type="text" id="subtask2" name="subtask2" maxlength="159" value="Webseite responsive gestalten"><br>
-						<label for="percentage2">Percentage:</label>
-						<input type="number" id="percentage2" name="percentage2" min="1" max="99" style="width: 4em"  value="33"><br> 
+					<div class="row Subtask">
+						<svg class="X" width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg"><g id="close_24px"><path id="icon/navigation/close_24px" d="M19 6.41L17.59 5L12 10.59L6.41 5L5 6.41L10.59 12L5 17.59L6.41 19L12 13.41L17.59 19L19 17.59L13.41 12L19 6.41Z" fill="#777e86" fill-opacity="0.54"/></g></svg>
+						<div class="col-md-1 col-xs-12">
+							<div class="Checkbox">
+								<input type="checkbox" value="None" id="RoundCheckbox2" name="check"/>
+								<label for="RoundCheckbox2"></label>
+							</div>
+						</div>
+						<div class="col-md-11 col-xs-12">
+							<label for="subtask0">Subtask:</label>
+							<input type="text" id="subtask0" name="subtask0" maxlength="159" value="Bootstrap einbinden"><br>
+							<label for="percentage0">Percentage:</label>
+							<input type="number" id="percentage0" name="percentage0" min="1" max="99" value="33">%<br>		
+						</div>
 					</div>
 					<div class="Add">
 						<h3>Add Subtask</h3>
 						<svg width="40" height="40" viewBox="0 0 40 40" fill="none" xmlns="http://www.w3.org/2000/svg">
 							<path id="plus" d="M24 3C24 1.34315 22.6569 0 21 0H19C17.3431 0 16 1.34315 16 3V16H3C1.34315 16 0 17.3431 0 19V21C0 22.6569 1.34315 24 3 24H16V37C16 38.6569 17.3431 40 19 40H21C22.6569 40 24 38.6569 24 37V24H37C38.6569 24 40 22.6569 40 21V19C40 17.3431 38.6569 16 37 16H24V3Z" fill="#c0c0c0"/>
 						</svg>
-
 					</div>
-					<div class="Submit">
-                        <input type="submit" value="SAVE CHANGES">
-                        <button class="Button">discard changes</button>
-					</div>
+				</div>
+				<div class="Submit">
+					<input type="submit" value="SAVE CHANGES">
+					<button class="Button">discard changes</button>
 				</div>
 			</form>
 		</div>

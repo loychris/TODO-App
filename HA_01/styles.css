@@ -8,7 +8,7 @@ a:hover {
 }
 
 a {
-    color: #53595f;
+    color: #000000;
 }
 
 header {
@@ -34,6 +34,7 @@ h1, h2, h3, h4, input, .TODOText {
 label {
     color: #777e86;
     margin-bottom: 0px;
+    margin-right: 10px; 
 }
 
 .Main {
@@ -60,7 +61,9 @@ label {
     border-radius: 20px;
     padding: 20px; 
     margin-top: 20px;
+    margin-bottom: 100px;
     background: #eeeeee;
+
 }
 
 .TODO:hover{
@@ -162,7 +165,7 @@ label {
     border-radius: 20px;
 }
 
-.Buttons button:hover {
+.Buttons button:hover, Button:hover, input[type=submit]:hover {
     height: 34px;
     margin-top: -2px;
     margin-bottom: -2px;
@@ -175,6 +178,7 @@ label {
 
 .DeleteButton{
     color: red;
+    border: 1px solid red; 
 }
 
 .Add {
@@ -194,12 +198,12 @@ label {
 
 /*      newTODO  /  editTODO     */
 
-
-
 .Subtask {
     box-shadow: 6px 6px 6px rgba(0, 0, 0, 0.25), -6px -6px 6px #FFFFFF;
     border-radius: 9px;
     padding: 10px;
+    margin-left: 0px;
+    margin-right: 0px;
     margin-bottom: 25px; 
     background-color: #eeeeee;
     position: relative; 
@@ -225,15 +229,6 @@ input {
     padding-right: 10px; 
 }
 
-.SubTasks {
-    margin-top: 50px; 
-}
-
-#description {
-    font-size: 30px; 
-    font-family: "Ubuntu";
-}
-
 input[type=text], input[type=textarea]{
     width: 100%;
     padding-top: 4px;
@@ -246,6 +241,9 @@ input[type=textarea]{
     border-radius: 20px;
 }
 
+input[type=number]{
+    width: 70px; 
+}
 
 input[type=submit]{
     text-decoration: none;
@@ -259,6 +257,16 @@ input[type=submit]{
     background: rgb(150, 248, 159);
     box-shadow: 4px 4px 4px rgba(0, 0, 0, 0.25), -4px -4px 4px #FFFFFF;
     border-radius: 20px;
+}
+
+.SubTasks {
+    margin-top: 50px; 
+    margin-bottom: 20px; 
+}
+
+#description {
+    font-size: 30px; 
+    font-family: "Ubuntu";
 }
 
 .Submit {
@@ -276,12 +284,14 @@ input[type=submit]{
 .RangeOutput {
     float: left; 
     position: absolute;
+    margin-top: 5px;
     width: 100%;
     pointer-events:none;
 } 
 
 .RangeInput {
     position: absolute; 
+    margin-top: 5px;
     left: 5px;
     right: 5px;
 }
@@ -322,4 +332,53 @@ input[type=range]{
     border-radius: 100%; 
     background: #5BA6FF;
     cursor: pointer;
+}
+
+.Checkbox {
+    position: relative; 
+    width: 50px;
+    height: 50px;
+    margin: auto;
+}
+
+.Checkbox label {
+    width: 50px;
+    height: 50px;
+    margin-left: auto;
+    margin-top: 25px;
+    margin-bottom: 25px; 
+    cursor: pointer;
+    position: absolute;
+    top: 0;
+    left: 0;
+    background: #EEEEEE;
+    border-radius: 50px;
+    box-shadow: inset 4px 4px 4px rgba(0, 0, 0, 0.25), inset -4px -4px 4px #FFFFFF;
+}
+
+.Checkbox label:after {
+    content: '';
+    width: 30px;
+    height: 15px;
+    position: absolute;
+    top: 15px;
+    left: 10px;
+    border: 6px solid #333;
+    border-top: none;
+    border-right: none;
+    background: transparent;
+    opacity: 0;
+    -webkit-transform: rotate(-45deg);
+            transform: rotate(-45deg);
+}
+.Checkbox label:hover::after {
+    opacity: 0.5;
+}
+
+.Checkbox input[type=checkbox] {
+    visibility: hidden;
+}
+
+.Checkbox input[type=checkbox]:checked + label:after {
+    opacity: 1;
 }
