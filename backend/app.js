@@ -68,7 +68,7 @@ app.delete('/todo/:id', async (req, res, next) => {
 //connect to db and start server
 mongoose
   .connect(                                                                 // Connect to the db 
-    "mongodb+srv://chris:Uh30ggX40gR86kXU@cluster0-qsimx.mongodb.net/test?retryWrites=true&w=majority",
+    "mongodb+srv://chris:qr16vN1H1C7zShHB@cluster0-qsimx.mongodb.net/test?retryWrites=true&w=majority",
     { useNewUrlParser: true, useUnifiedTopology: true }
   )
   .then(() => {
