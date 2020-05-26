@@ -52,6 +52,7 @@ app.post('/todo', async (req, res, next) => {
   res.status(201).json(createdTodo);                      // respond to the http request with success (and the created TODO)
 })
 
+// update an existing TODO
 app.patch('/todo/:id', async (req, res, next) => {
   const id = req.params.id
   let todo;
@@ -69,7 +70,7 @@ app.patch('/todo/:id', async (req, res, next) => {
   }catch(err){
     console.log(err);
   }
-  res.status(201).json(todo);
+  res.status(204).json(todo);
 })  
 
 // delete a TODO by its id
