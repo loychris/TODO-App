@@ -140,7 +140,6 @@
             z-index: 2;
             float: left;
             height: 12px;
-            width: 68%;
             background: #5BA6FF;
             border-radius: 6px;
         }
@@ -474,7 +473,7 @@
 
     <div class='container Main'>
         <h1>Your TODOs: </h1>
-        <div class='row Row'>
+        <div class='row Row' id="target">
             <div class='col-sm-12 col-md-6 col-lg-4 col-xl-3 Col'>
                 <div class='TODO'>
                     <div class="TODOText">Skalable Systems Homework</div>
@@ -538,368 +537,7 @@
                 </div>
             </div>
             <div class='col-sm-12 col-md-6 col-lg-4 col-xl-3 Col'>
-                <div class='TODO'>
-                    <div class="TODOText">Shopping</div>
-                    <div class="Deadline">Deadline:   14.05.2020</div>
-                    <div class="Progress">
-                        <div class="ProgressNum">50%</div>
-                        <div class='ProgressBar'>
-                            <div class="ProgressBarBlue"></div>
-                            <div class="ProgressBarGrey"></div>
-                        </div>
-                    </div>
-                    <div class="Subtasks">
-                        <h5>Subtasks:</h5> 
-                        <div class="Subtask">
-                            <div class="CheckboxSmall">
-                                <input 
-                                    type="checkbox" 
-                                    value="None" 
-                                    id="RoundCheckbox10" 
-                                    name="check" 
-                                    checked />
-                                <label for="RoundCheckbox10"></label>
-                            </div>
-                            <div class="SubtaskText">
-                                buy groceries                     
-                            </div>
-                        </div>
-                        <div class="Subtask">
-                            <div class="CheckboxSmall">
-                                <input 
-                                    type="checkbox" 
-                                    value="None" 
-                                    id="RoundCheckbox11" 
-                                    name="check" />
-                                <label for="RoundCheckbox11"></label>
-                            </div>
-                            <div class="SubtaskText">
-                                return sweater                       
-                            </div>
-                        </div>
-                    </div>
-                    <div class=Buttons>
-                        <a href='./editTODO.html'><button class="EditButton">EDIT</button></a>
-                        <button class="DeleteButton">DELETE</button>
-                    </div>
-                </div>
-            </div>
-            <div class='col-sm-12 col-md-6 col-lg-4 col-xl-3 Col'>
-                <div class='TODO'>
-                    <div class="TODOText">Finish Reading Book</div>
-                    <div class="Deadline">Deadline:   14.05.2020</div>
-                    <div class="Progress">
-                        <div class="ProgressNum">25%</div>
-                        <div class='ProgressBar'>
-                            <div class="ProgressBarBlue"></div>
-                            <div class="ProgressBarGrey"></div>
-                        </div>
-                    </div>
-                    <div class="Subtasks">
-                        <h5>Subtasks:</h5> 
-                        <div class="Subtask">
-                            <div class="CheckboxSmall">
-                                <input 
-                                    type="checkbox" 
-                                    value="None" 
-                                    id="RoundCheckbox20" 
-                                    name="check" 
-                                    checked />
-                                <label for="RoundCheckbox20"></label>
-                            </div>
-                            <div class="SubtaskText">
-                                read chapter 9                      
-                            </div>
-                        </div>
-                        <div class="Subtask">
-                            <div class="CheckboxSmall">
-                                <input 
-                                    type="checkbox" 
-                                    value="None" 
-                                    id="RoundCheckbox21" 
-                                    name="check"/>
-                                <label for="RoundCheckbox21"></label>
-                            </div>
-                            <div class="SubtaskText">
-                                read chapter 10                       
-                            </div>
-                        </div>
-                        <div class="Subtask">
-                            <div class="CheckboxSmall">
-                                <input 
-                                    type="checkbox" 
-                                    value="None" 
-                                    id="RoundCheckbox22" 
-                                    name="check"/>
-                                <label for="RoundCheckbox22"></label>
-                            </div>
-                            <div class="SubtaskText">
-                                read chapter 11                         
-                            </div>
-                        </div>
-                        <div class="Subtask">
-                            <div class="CheckboxSmall">
-                                <input 
-                                    type="checkbox" 
-                                    value="None" 
-                                    id="RoundCheckbox23" 
-                                    name="check"/>
-                                <label for="RoundCheckbox23"></label>
-                            </div>
-                            <div class="SubtaskText">
-                                read chapter 12                         
-                            </div>
-                        </div>
-                    </div>
-                    <div class=Buttons>
-                        <a href='./editTODO.html'><button class="EditButton">EDIT</button></a>
-                        <button class="DeleteButton">DELETE</button>
-                    </div>
-                </div>
-            </div>
-            <div class='col-sm-12 col-md-6 col-lg-4 col-xl-3 Col'>
-                <div class='TODO'>
-                    <div class="TODOText">Become rich</div>
-                    <div class="Deadline">Deadline:   14.05.2020</div>
-                    <div class="Progress">
-                        <div class="ProgressNum">33%</div>
-                        <div class='ProgressBar'>
-                            <div class="ProgressBarBlue"></div>
-                            <div class="ProgressBarGrey"></div>
-                        </div>
-                    </div>
-                    <div class="Subtasks">
-                        <h5>Subtasks:</h5> 
-                        <div class="Subtask">
-                            <div class="CheckboxSmall">
-                                <input 
-                                    type="checkbox" 
-                                    value="None" 
-                                    id="RoundCheckbox30" 
-                                    name="check" 
-                                    checked />
-                                <label for="RoundCheckbox30"></label>
-                            </div>
-                            <div class="SubtaskText">
-                                build Todo App                       
-                            </div>
-                        </div>
-                        <div class="Subtask">
-                            <div class="CheckboxSmall">
-                                <input 
-                                    type="checkbox" 
-                                    value="None" 
-                                    id="RoundCheckbox31" 
-                                    name="check"
-                                    />
-                                <label for="RoundCheckbox31"></label>
-                            </div>
-                            <div class="SubtaskText">
-                                drop out of college                      
-                            </div>
-                        </div>
-                        <div class="Subtask">
-                            <div class="CheckboxSmall">
-                                <input 
-                                    type="checkbox" 
-                                    value="None" 
-                                    id="RoundCheckbox32" 
-                                    name="check"/>
-                                <label for="RoundCheckbox32"></label>
-                            </div>
-                            <div class="SubtaskText">
-                                sell to Microsoft for a shit ton of money                         
-                            </div>
-                        </div>
-                    </div>
-                    <div class=Buttons>
-                        <a href='./editTODO.html'><button class="EditButton">EDIT</button></a>
-                        <button class="DeleteButton">DELETE</button>
-                    </div>
-                </div>
-            </div>
-            <div class='col-sm-12 col-md-6 col-lg-4 col-xl-3 Col'>
-                <div class='TODO'>
-                    <div class="TODOText">Clean the bathroom</div>
-                    <div class="Deadline">Deadline:   14.05.2020</div>
-                    <div class="Progress">
-                        <div class="ProgressNum">0%</div>
-                        <div class='ProgressBar'>
-                            <div class="ProgressBarBlue"></div>
-                            <div class="ProgressBarGrey"></div>
-                        </div>
-                    </div>
-                    <div class="Subtasks">
-                        <h5>Subtasks:</h5> 
-                        <div class="Subtask">
-                            <div class="CheckboxSmall">
-                                <input 
-                                    type="checkbox" 
-                                    value="None" 
-                                    id="RoundCheckbox40" 
-                                    name="check"/>
-                                <label for="RoundCheckbox40"></label>
-                            </div>
-                            <div class="SubtaskText">
-                                clean the toilet                       
-                            </div>
-                        </div>
-                        <div class="Subtask">
-                            <div class="CheckboxSmall">
-                                <input 
-                                    type="checkbox" 
-                                    value="None" 
-                                    id="RoundCheckbox41" 
-                                    name="check"/>
-                                <label for="RoundCheckbox41"></label>
-                            </div>
-                            <div class="SubtaskText">
-                                clean the sink                        
-                            </div>
-                        </div>
-                        <div class="Subtask">
-                            <div class="CheckboxSmall">
-                                <input 
-                                    type="checkbox" 
-                                    value="None" 
-                                    id="RoundCheckbox42" 
-                                    name="check"/>
-                                <label for="RoundCheckbox42"></label>
-                            </div>
-                            <div class="SubtaskText">
-                                wipe the floor
-                            </div>
-                        </div>
-                    </div>
-                    <div class=Buttons>
-                        <a href='./editTODO.html'><button class="EditButton">EDIT</button></a>
-                        <button class="DeleteButton">DELETE</button>
-                    </div>
-                </div>
-            </div>
-            <div class='col-sm-12 col-md-6 col-lg-4 col-xl-3 Col'>
-                <div class='TODO'>
-                    <div class="TODOText">Deploy the app scalable</div>
-                    <div class="Deadline">Deadline:   14.05.2020</div>
-                    <div class="Progress">
-                        <div class="ProgressNum">0%</div>
-                        <div class='ProgressBar'>
-                            <div class="ProgressBarBlue"></div>
-                            <div class="ProgressBarGrey"></div>
-                        </div>
-                    </div>
-                    <div class="Subtasks">
-                        <h5>Subtasks:</h5> 
-                        <div class="Subtask">
-                            <div class="CheckboxSmall">
-                                <input 
-                                    type="checkbox" 
-                                    value="None" 
-                                    id="RoundCheckbox50" 
-                                    name="check" />
-                                <label for="RoundCheckbox50"></label>
-                            </div>
-                            <div class="SubtaskText">
-                                build Docker images                      
-                            </div>
-                        </div>
-                        <div class="Subtask">
-                            <div class="CheckboxSmall">
-                                <input 
-                                    type="checkbox" 
-                                    value="None" 
-                                    id="RoundCheckbox51" 
-                                    name="check"/>
-                                <label for="RoundCheckbox51"></label>
-                            </div>
-                            <div class="SubtaskText">
-                                Set up Kubernetes                     
-                            </div>
-                        </div>
-                        <div class="Subtask">
-                            <div class="CheckboxSmall">
-                                <input 
-                                    type="checkbox" 
-                                    value="None" 
-                                    id="RoundCheckbox52" 
-                                    name="check"/>
-                                <label for="RoundCheckbox52"></label>
-                            </div>
-                            <div class="SubtaskText">
-                                pay AWS bill                         
-                            </div>
-                        </div>
-                    </div>
-                    <div class=Buttons>
-                        <a href='./editTODO.html'><button class="EditButton">EDIT</button></a>
-                        <button class="DeleteButton">DELETE</button>
-                    </div>
-                </div>
-            </div>
-            <div class='col-sm-12 col-md-6 col-lg-4 col-xl-3 Col'>
-                <div class='TODO'>
-                    <div class="TODOText">Write the content for the last example TODO</div>
-                    <div class="Deadline">Deadline:   14.05.2020</div>
-                    <div class="Progress">
-                        <div class="ProgressNum">66%</div>
-                        <div class='ProgressBar'>
-                            <div class="ProgressBarBlue"></div>
-                            <div class="ProgressBarGrey"></div>
-                        </div>
-                    </div>
-                    <div class="Subtasks">
-                        <h5>Subtasks:</h5> 
-                        <div class="Subtask">
-                            <div class="CheckboxSmall">
-                                <input 
-                                    type="checkbox" 
-                                    value="None" 
-                                    id="RoundCheckbox60" 
-                                    name="check" 
-                                    checked />
-                                <label for="RoundCheckbox60"></label>
-                            </div>
-                            <div class="SubtaskText">
-                                write the first subtask                       
-                            </div>
-                        </div>
-                        <div class="Subtask">
-                            <div class="CheckboxSmall">
-                                <input 
-                                    type="checkbox" 
-                                    value="None" 
-                                    id="RoundCheckbox61" 
-                                    name="check"
-                                    checked />
-                                <label for="RoundCheckbox61"></label>
-                            </div>
-                            <div class="SubtaskText">
-                                write the secont subtask                        
-                            </div>
-                        </div>
-                        <div class="Subtask">
-                            <div class="CheckboxSmall">
-                                <input 
-                                    type="checkbox" 
-                                    value="None" 
-                                    id="RoundCheckbox62" 
-                                    name="check"
-                                    checked/>
-                                <label for="RoundCheckbox62"></label>
-                            </div>
-                            <div class="SubtaskText">
-                                write third subtask                         
-                            </div>
-                        </div>
-                    </div>
-                    <div class=Buttons>
-                        <a href='./editTODO.html'><button class="EditButton">EDIT</button></a>
-                        <button class="DeleteButton">DELETE</button>
-                    </div>
-                </div>
-            </div>
-            <div class='col-sm-12 col-md-6 col-lg-4 col-xl-3 Col'>
-                <a href='newTODO.html'>
+                <a href='/newTodo'>
                     <div class='TODO Add'>
                         <h2>add TODO</h2>
                         <svg  width="60" height="60" viewBox="0 0 80 80" fill="none" xmlns="http://www.w3.org/2000/svg">
@@ -916,15 +554,90 @@
     <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js" integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo" crossorigin="anonymous"></script>
     <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/js/bootstrap.min.js" integrity="sha384-OgVRvuATP1z7JjHLkuOU7Xw704+h835Lr+6QL9UvYjZE3Ipu6Tp75j7Bh/kR0JKI" crossorigin="anonymous"></script>
     <script>
-        // $(function (){
-        //     $.ajax({
-        //         type: 'GET',
-        //         url: '/all',
-        //         success: function(data){
-        //             console.log(data);
-        //         }
-        //     })
-        // })
+
+        const deleteTodo = (id) => {
+            console.log("deleting todo", id);
+            $.ajax({
+                type: 'DELETE',
+                url: `/todo/${id}`,
+                success: (data) => {
+                    console.log(data);
+                }
+            });
+            $(`#${id}`).remove();
+        }
+
+        const renderSubTask = (subTask) => {
+
+        }
+
+        const renderTodo = (todo) => {
+            const id = `${todo._id}`
+            $("#target").append(
+                `<div class="col-sm-12 col-md-6 col-lg-4 col-xl-3 Col" id="${todo._id}">
+                    <div class="TODO">
+                        <div class="TODOText">${todo.description}</div>
+                        <div class="Deadline">${todo.deadline}</div>
+                        <div class="Progress">
+                            <div class="ProgressNum">${todo.progress}%</div>
+                            <div class='ProgressBar'>
+                                <div class="ProgressBarBlue" style="width:${todo.progress}%"></div>
+                                <div class="ProgressBarGrey"></div>
+                            </div>
+                        </div>
+                        <div id="sub${todo._id}">
+                        </div>
+                        <div class=Buttons>
+                            <a href='./editTodo'><button class="EditButton">EDIT</button></a>
+                            <button id="del${todo._id}" class="DeleteButton">DELETE</button>
+                        </div>
+                    </div>
+                </div>`
+            )
+            $(`#del${todo._id}`).on("click", () => deleteTodo(id));
+            if(todo.subTasks && todo.subTasks.length>0){
+                $(`#sub${todo._id}`).append("<h5>Subtasks:</h5>"); 
+                todo.subTasks.forEach(task => {
+                    $(`#sub${todo._id}`).append(`
+                        <div class="Subtask">
+                            <div class="CheckboxSmall">
+                                <input 
+                                    type="checkbox" 
+                                    value="None" 
+                                    id="RoundCheckbox02" 
+                                    name="check"
+                                    checked="${task.done}"/>
+                                <label for="RoundCheckbox02"></label>
+                            </div>
+                            <div class="SubtaskText">
+                                ${task.description}
+                            </div>
+                        </div>
+                    `); 
+
+                });
+
+            }
+        }
+
+
+
+
+
+        $(function (){
+            $.ajax({
+                type: 'GET',
+                url: '/all',
+                success: (data) => {
+                    console.log(data);
+                    data.map(t => {
+                        renderTodo(t)
+                    });
+                }
+            })
+        })
+
+
     </script>
 </body>
 </html>

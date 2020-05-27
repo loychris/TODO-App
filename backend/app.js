@@ -62,11 +62,12 @@ app.get('/:id', async (req, res, next) => {
 
 // post a new TODO
 app.post('/todo', async (req, res, next) => {
-  const { description, deadline, progress } = req.body;   // get description etc. from request-body -> screenshot
+  const { description, deadline, progress, subTasks } = req.body;   // get description etc. from request-body -> screenshot
   const createdTodo = new Todo({
     description,
     deadline,
-    progress
+    progress,
+    subTasks
   })
   try{
     await createdTodo.save(() => console.log("created todo"));  // save the newly created TODO to the db
@@ -75,7 +76,6 @@ app.post('/todo', async (req, res, next) => {
   }
   res.status(201).json(createdTodo);                      // respond to the http request with success (and the created TODO)
 })
-
 
 // update an existing TODO
 app.patch('/todo/:id', async (req, res, next) => {
@@ -88,17 +88,6 @@ app.patch('/todo/:id', async (req, res, next) => {
   }
   res.status(204).json(todo);
 })  
-
-
-// add a subtask to a TODO
-//app.post('/todo/:id', async (req, res, next) => {
- // const id = req.params.id;
-//  let todo;
-//  try{
-//   todo = await Todo.findById(id);
-//  }catch(err){
-//    console.log(err);
-//  }
 
 // delete a TODO by its id
 app.delete('/todo/:id', async (req, res, next) => {
