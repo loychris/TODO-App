@@ -474,78 +474,6 @@
     <div class='container Main'>
         <h1>Your TODOs: </h1>
         <div class='row Row' id="target">
-            <div class='col-sm-12 col-md-6 col-lg-4 col-xl-3 Col'>
-                <div class='TODO'>
-                    <div class="TODOText">Skalable Systems Homework</div>
-                    <div class="Deadline">Deadline:   14.05.2020</div>
-                    <div class="Progress">
-                        <div class="ProgressNum">100%</div>
-                        <div class='ProgressBar'>
-                            <div class="ProgressBarBlue"></div>
-                            <div class="ProgressBarGrey"></div>
-                        </div>
-                    </div>
-                    <div class="Subtasks">
-                        <h5>Subtasks:</h5> 
-                        <div class="Subtask">
-                            <div class="CheckboxSmall">
-                                <input 
-                                    type="checkbox" 
-                                    value="None" 
-                                    id="RoundCheckbox00" 
-                                    name="check" 
-                                    checked />
-                                <label for="RoundCheckbox00"></label>
-                            </div>
-                            <div class="SubtaskText">
-                                Structure the Website with HTML                       
-                            </div>
-                        </div>
-                        <div class="Subtask">
-                            <div class="CheckboxSmall">
-                                <input 
-                                    type="checkbox" 
-                                    value="None" 
-                                    id="RoundCheckbox01" 
-                                    name="check"
-                                    checked />
-                                <label for="RoundCheckbox01"></label>
-                            </div>
-                            <div class="SubtaskText">
-                                Make everything look nice with CSS                       
-                            </div>
-                        </div>
-                        <div class="Subtask">
-                            <div class="CheckboxSmall">
-                                <input 
-                                    type="checkbox" 
-                                    value="None" 
-                                    id="RoundCheckbox02" 
-                                    name="check"
-                                    checked/>
-                                <label for="RoundCheckbox02"></label>
-                            </div>
-                            <div class="SubtaskText">
-                                Make everything responsive with Bootstrap
-                            </div>
-                        </div>
-                    </div>
-                    <div class=Buttons>
-                        <a href='./editTODO.html'><button class="EditButton">EDIT</button></a>
-                        <button class="DeleteButton">DELETE</button>
-                    </div>
-                </div>
-            </div>
-            <div class='col-sm-12 col-md-6 col-lg-4 col-xl-3 Col'>
-                <a href='/newTodo'>
-                    <div class='TODO Add'>
-                        <h2>add TODO</h2>
-                        <svg  width="60" height="60" viewBox="0 0 80 80" fill="none" xmlns="http://www.w3.org/2000/svg">
-                            <path id='plus' d="M48 3C48 1.34315 46.6569 0 45 0H35C33.3431 0 32 1.34315 32 3V32H3C1.34315 32 0 33.3431 0 35V45C0 46.6569 1.34315 48 3 48H32V77C32 78.6569 33.3431 80 35 80H45C46.6569 80 48 78.6569 48 77V48H77C78.6569 48 80 46.6569 80 45V35C80 33.3431 78.6569 32 77 32H48V3Z" fill="#c0c0c0"/>
-                        </svg>
-                    </div>
-                </a>
-            </div>
         </div>
     </div>
 
@@ -565,10 +493,6 @@
                 }
             });
             $(`#${id}`).remove();
-        }
-
-        const renderSubTask = (subTask) => {
-
         }
 
         const renderTodo = (todo) => {
@@ -597,30 +521,43 @@
             $(`#del${todo._id}`).on("click", () => deleteTodo(id));
             if(todo.subTasks && todo.subTasks.length>0){
                 $(`#sub${todo._id}`).append("<h5>Subtasks:</h5>"); 
-                todo.subTasks.forEach(task => {
+                for(let i=0;i<todo.subTasks.length;i++){
                     $(`#sub${todo._id}`).append(`
                         <div class="Subtask">
                             <div class="CheckboxSmall">
                                 <input 
                                     type="checkbox" 
                                     value="None" 
-                                    id="RoundCheckbox02" 
+                                    id="cb${i}_${todo._id}" 
                                     name="check"
-                                    checked="${task.done}"/>
-                                <label for="RoundCheckbox02"></label>
+                                    ${todo.subTasks[i].done ? "checked" : ""}"/>
+                                <label for="cb${i}_${todo._id}"></label>
                             </div>
                             <div class="SubtaskText">
-                                ${task.description}
+                                ${todo.subTasks[i].description}
                             </div>
                         </div>
                     `); 
+                }
+                (task => {
 
-                });
-
+                });  
             }
         }
 
-
+        const addNewTodoButton = () => {
+            $("#target").append(`
+            <div class='col-sm-12 col-md-6 col-lg-4 col-xl-3 Col'>
+                <a href='/newTodo'>
+                    <div class='TODO Add'>
+                        <h2>add TODO</h2>
+                        <svg  width="60" height="60" viewBox="0 0 80 80" fill="none" xmlns="http://www.w3.org/2000/svg">
+                            <path id='plus' d="M48 3C48 1.34315 46.6569 0 45 0H35C33.3431 0 32 1.34315 32 3V32H3C1.34315 32 0 33.3431 0 35V45C0 46.6569 1.34315 48 3 48H32V77C32 78.6569 33.3431 80 35 80H45C46.6569 80 48 78.6569 48 77V48H77C78.6569 48 80 46.6569 80 45V35C80 33.3431 78.6569 32 77 32H48V3Z" fill="#c0c0c0"/>
+                        </svg>
+                    </div>
+                </a>
+            </div>`);
+        }
 
 
 
@@ -631,8 +568,9 @@
                 success: (data) => {
                     console.log(data);
                     data.map(t => {
-                        renderTodo(t)
+                        renderTodo(t);
                     });
+                    addNewTodoButton();
                 }
             })
         })

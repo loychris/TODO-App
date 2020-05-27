@@ -39,30 +39,32 @@ app.get('/impressum', (req, res) => {
 app.get('/all', async (req, res, next) => {  
   let todos; 
   try{
-    todos = await Todo.find({});                          // find all todos in the db
+    todos = await Todo.find({});                          
   }catch(err){
     console.log(err);
   }
   console.log("Fetched all todos");
-  res.json(todos);                                        // respond to the http request with all TODOs that have been found
+  res.json(todos);                                        
 })
 
 
 // get a single TODO by its id
-app.get('/:id', async (req, res, next) => {
+app.get('/todo/:id', async (req, res, next) => {
   const id = req.params.id; 
   let todo;
   try{
-    todo = await Todo.findById(id);                       // find the TODO with the given id in the db
+    todo = await Todo.findById(id);                       
   }catch(err){
     console.log(err);
   }
-  res.json(todo);                                         // respond to the http request with the todo
+  res.json(todo);                                         
 })
 
 // post a new TODO
 app.post('/todo', async (req, res, next) => {
-  const { description, deadline, progress, subTasks } = req.body;   // get description etc. from request-body -> screenshot
+  console.log("body", req.body);
+  console.log("params", req.params);
+  const { description, deadline, progress, subTasks } = req.body;   
   const createdTodo = new Todo({
     description,
     deadline,
@@ -70,11 +72,11 @@ app.post('/todo', async (req, res, next) => {
     subTasks
   })
   try{
-    await createdTodo.save(() => console.log("created todo"));  // save the newly created TODO to the db
+    await createdTodo.save(() => console.log("created todo"));  
   }catch(err){
     console.log(err);
   }
-  res.status(201).json(createdTodo);                      // respond to the http request with success (and the created TODO)
+  res.redirect('/');                      
 })
 
 // update an existing TODO
@@ -82,7 +84,18 @@ app.patch('/todo/:id', async (req, res, next) => {
   const id = req.params.id
   let todo;
   try{
-    todo = await Todo.findByIdAndUpdate(id, {$set:req.body}, {new: true}, () => console.log("updated todo"));  
+    todo = await Todo.findById(id);                       
+  }catch(err){
+    console.log(err);
+  }
+  todo = {
+    description,
+    deadline,
+    progress,
+    subTasks
+  }
+  try{
+    todo.save()
   }catch(err){
     console.log(err);
   }
@@ -91,26 +104,29 @@ app.patch('/todo/:id', async (req, res, next) => {
 
 // delete a TODO by its id
 app.delete('/todo/:id', async (req, res, next) => {
-  const id = req.params.id;                               // get id from url (z.B. http://localhost:3000/5ecbe9cc719c1e159051d2b8)
+  const id = req.params.id;                               
   let todo;
   try{
     todo = await Todo.findByIdAndDelete(id, () => console.log("deleted todo"));
   }catch(err){
     console.log(err); 
   }
-  res.json({message: "Deleted Successfully"});            // return success to the client
+  res.json({message: "Deleted Successfully"});            
 })
 
+app.post("/printrequest", (req, res, next) => {
+  console.log(req.body);
+})
 
 //connect to db and start server
 mongoose
-  .connect(                                                                 // Connect to the db 
+  .connect(                                                
     "mongodb+srv://chris:qr16vN1H1C7zShHB@cluster0-qsimx.mongodb.net/test?retryWrites=true&w=majority",
     { useNewUrlParser: true, useUnifiedTopology: true }
   )
   .then(() => {
     console.log("Connected to db");
-    app.listen(port, () => console.log("Server is running on port 3000"));  // Start the server
+    app.listen(port, () => console.log("Server is running on port 3000"));  
   })
   .catch((err) => {
     console.log(err);
