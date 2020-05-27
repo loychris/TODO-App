@@ -4,10 +4,17 @@ const Todo = require('./todo');
 
 var express = require('express');
 var path = require('path');
-var cors = require('cors')
+var cors = require('cors');
+const multiparty = require('multiparty');
+
 
 var app = express();     
-                                 
+                       
+var bodyParser = require('body-parser')
+app.use( bodyParser.json() );       // to support JSON-encoded bodies
+app.use(bodyParser.urlencoded({     // to support URL-encoded bodies
+  extended: true
+}));
 
 const port = 3000;
 
@@ -62,8 +69,8 @@ app.get('/todo/:id', async (req, res, next) => {
 
 // post a new TODO
 app.post('/todo', async (req, res, next) => {
+
   console.log("body", req.body);
-  console.log("params", req.params);
   const { description, deadline, progress, subTasks } = req.body;   
   const createdTodo = new Todo({
     description,
@@ -71,6 +78,7 @@ app.post('/todo', async (req, res, next) => {
     progress,
     subTasks
   })
+  console.log(createdTodo);
   try{
     await createdTodo.save(() => console.log("created todo"));  
   }catch(err){
