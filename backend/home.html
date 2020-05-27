@@ -1,0 +1,930 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>TODO Tracker</title>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+    <link href="https://fonts.googleapis.com/css2?family=Roboto&family=Ubuntu:wght@700&display=swap" rel="stylesheet">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <style>
+        body {
+            background: #eeeeee;
+        }
+
+        a:hover {
+            text-decoration: none;
+            color: #212529;
+        }
+
+        a {
+            color: #000000;
+        }
+
+        header {
+            position: fixed;
+            top: 0px;
+            left: 0px;
+            right: 0px; 
+            z-index: 1000;
+            background-color: #343434;
+            color: #ffffff;
+            text-align: center;
+            box-shadow: 0px 0px 8px #000000;
+        }
+
+        header a {
+            color: #ffffff;
+            text-decoration: none!important;
+        }
+
+        h1, h2, h3, h4, input, .TODOText {
+            font-family: 'Ubuntu';
+            font-weight: 700;
+            margin-right: 10px;
+        }
+
+        label {
+            color: #777e86;
+            margin-bottom: 0px;
+            margin-right: 10px; 
+        }
+
+        .Main {
+            margin-top: 86px; 
+        }
+
+        .Row {
+            padding: 5px; 
+            margin-bottom: 10px; 
+        }
+
+        .TODO {
+            margin-bottom: 40px;
+            margin-left: 4px;
+            margin-right: 4px;
+            padding: 20px; 
+            box-shadow: 6px 6px 6px rgba(0, 0, 0, 0.25), -6px -6px 6px #FFFFFF;
+            border-radius: 20px;
+            background: #eeeeee;
+        }
+
+        .newTODO {
+            box-shadow: 6px 6px 6px rgba(0, 0, 0, 0.25), -6px -6px 6px #FFFFFF;
+            border-radius: 20px;
+            padding: 20px; 
+            margin-top: 20px;
+            margin-bottom: 100px;
+            background: #eeeeee;
+
+        }
+
+        .TODO:hover{
+            box-shadow: 10px 10px 10px rgba(0, 0, 0, 0.25), -10px -10px 10px #FFFFFF;
+
+        }
+
+        .TODOText {
+            font-weight: 300;
+            font-size: 20px;
+            line-height: 22px;
+            margin-bottom: 10px; 
+        }
+
+        .Deadline{
+            font-family: Roboto;
+            font-weight: normal;
+            font-size: 14px;
+            line-height: 16px;
+            text-align: right;
+            margin-bottom: 15px; 
+            color: #666666;
+
+        }
+
+        .Progress {
+            font-family: Roboto;
+            font-size: 12px;
+            margin-bottom: 10px;
+            display: flex; 
+            justify-content: space-between;
+        }
+
+        .ProgressNum {
+            font-family: Roboto;
+            font-weight: normal;
+            font-size: 12px;
+            line-height: 14px;
+            text-align: left;
+        }
+
+        .ProgressBar {
+            position: relative;
+            width: 86%;
+            height: 12px;
+            margin-bottom: 15px; 
+        }
+
+        .ProgressBarGrey {
+            position: absolute;
+            top: 0;
+            left: 0;
+            height: 12px;
+            width: 100%;
+            background: #C4C4C4;
+            border-radius: 6px;
+        }
+
+        .ProgressBarBlue {
+            position: absolute;
+            top: 0;
+            left: 0;
+            z-index: 2;
+            float: left;
+            height: 12px;
+            width: 68%;
+            background: #5BA6FF;
+            border-radius: 6px;
+        }
+
+        .Subtasks {
+            margin-left: -20px;
+            margin-right: -20px;
+            margin-bottom: 20px;
+            padding-left: 20px;
+            padding-right: 20px;
+
+        }
+
+        .Buttons {
+            display: flex; 
+            justify-content: space-between;
+        }
+
+        .Buttons button {
+            text-decoration: none;
+            cursor: pointer;
+            text-align: center; 
+            all: unset;
+            height: 30px;
+            padding-left: 15px;
+            padding-right: 15px; 
+            background: #eeeeee;
+            box-shadow: 4px 4px 4px rgba(0, 0, 0, 0.25), -4px -4px 4px #FFFFFF;
+            border-radius: 20px;
+        }
+
+        .Button {
+            text-decoration: none;
+            cursor: pointer;
+            text-align: center; 
+            all: unset;
+            height: 30px;
+            padding-left: 15px;
+            padding-right: 15px; 
+            background: #eeeeee;
+            box-shadow: 4px 4px 4px rgba(0, 0, 0, 0.25), -4px -4px 4px #FFFFFF;
+            border-radius: 20px;
+        }
+
+        .Buttons button:hover, Button:hover, input[type=submit]:hover {
+            height: 34px;
+            margin-top: -2px;
+            margin-bottom: -2px;
+            box-shadow: 8px 8px 8px rgba(0, 0, 0, 0.25), -8px -8px 8px #FFFFFF;
+        }
+
+        .Buttons button:active {
+            box-shadow: 4px 4px 4px rgba(0, 0, 0, 0.25), -4px -4px 4px #FFFFFF;
+        }
+
+        .DeleteButton{
+            color: red;
+            border: 1px solid red; 
+        }
+
+        .Add {
+            cursor: pointer;
+            text-align: center; 
+            color: #c0c0c0;
+        }
+
+        .Add:hover {
+            color: #53595f;
+            text-decoration: none;
+        }
+
+        .Add:hover #plus {
+            fill: #53595f;
+        }
+
+        /*      newTODO  /  editTODO     */
+
+        .Subtask {
+            box-shadow: 4px 4px 4px rgba(0, 0, 0, 0.25), -4px -4px 4px #FFFFFF;
+            border-radius: 9px;
+            padding: 10px;
+            margin-left: 0px;
+            margin-right: 0px;
+            margin-bottom: 25px; 
+            background-color: #eeeeee;
+            position: relative; 
+        }
+
+        .X {
+            position: absolute;
+            right: 3px;
+            top: 3px; 
+        }
+
+        .X:hover path{
+            fill: #000000; 
+        }
+
+        input {
+            background-color: #ffffff;
+            box-shadow: inset 3px 3px 3px rgba(0, 0, 0, 0.25), inset -3px -3px 3px #FFFFFF;
+            border-radius: 15px; 
+            font-size: 15pt;
+            border: none;
+            padding-left: 10px;
+            padding-right: 10px; 
+        }
+
+        input[type=text], input[type=textarea]{
+            width: 100%;
+            padding-top: 4px;
+            padding-bottom: 4px;  
+
+            margin-bottom: 10px; 
+        }
+
+        input[type=textarea]{
+            border-radius: 20px;
+        }
+
+        input[type=number]{
+            width: 70px; 
+        }
+
+        input[type=submit]{
+            text-decoration: none;
+            cursor: pointer;
+            text-align: center; 
+            all: unset;
+            height: 30px;
+            padding-left: 15px;
+            padding-right: 15px; 
+            margin-right: 15px; 
+            background: rgb(150, 248, 159);
+            box-shadow: 4px 4px 4px rgba(0, 0, 0, 0.25), -4px -4px 4px #FFFFFF;
+            border-radius: 20px;
+        }
+
+        .SubTasks {
+            margin-top: 50px; 
+            margin-bottom: 20px; 
+        }
+
+        #description {
+            font-size: 30px; 
+            font-family: "Ubuntu";
+        }
+
+        .Submit {
+            display: felx; 
+        }
+
+        .RangeContainer {
+            text-align: center;
+            position: relative;
+            height: 40px;
+            width: 100%;
+            display: block; 
+        }
+
+        .RangeOutput {
+            float: left; 
+            position: absolute;
+            margin-top: 5px;
+            width: 100%;
+            pointer-events:none;
+        } 
+
+        .RangeInput {
+            position: absolute; 
+            margin-top: 5px;
+            left: 5px;
+            right: 5px;
+        }
+
+        input[type=range]{
+            box-shadow: none;
+            padding: 0px;
+        }
+
+        .Slider {
+            -webkit-appearance: none;
+            width: 100%;
+            height: 25px;
+            background: #d3d3d3;
+            outline: none;
+            opacity: 0.7;
+            -webkit-transition: .2s;
+            transition: opacity .2s;
+        }
+        
+        .Slider:hover {
+            opacity: 1;
+        }
+        
+        .Slider::-webkit-slider-thumb {
+            -webkit-appearance: none;
+            appearance: none;
+            width: 40px;
+            height: 40px;
+            border-radius: 100%; 
+            background: #5BA6FF;
+            cursor: pointer;
+        }
+        
+        .Slider::-moz-range-thumb {
+            width: 40px;
+            height: 40px;
+            border-radius: 100%; 
+            background: #5BA6FF;
+            cursor: pointer;
+        }
+
+        .CheckboxSmall {
+            position: relative; 
+            width: 20px;
+            height: 20px;
+            margin-right: 10px;
+            float: left;
+        }
+
+        .CheckboxSmall label {
+            width: 20px;
+            height: 20px;
+            margin-left: auto;
+            margin-bottom: 4px; 
+            cursor: pointer;
+            position: absolute;
+            top: 0;
+            left: 0;
+            background: #EEEEEE;
+            border-radius: 50px;
+            box-shadow: inset 4px 4px 4px rgba(0, 0, 0, 0.25), inset -4px -4px 4px #FFFFFF;
+        }
+
+        .CheckboxSmall label:after {
+            content: '';
+            width: 12px;
+            height: 7px;
+            position: absolute;
+            top: 6px;
+            left: 4px;
+            border: 3px solid #333;
+            border-top: none;
+            border-right: none;
+            background: transparent;
+            opacity: 0;
+            -webkit-transform: rotate(-45deg);
+                    transform: rotate(-45deg);
+        }
+
+        .Checkbox label {
+            width: 50px;
+            height: 50px;
+            margin-right: auto;
+            margin-bottom: 25px; 
+            cursor: pointer;
+            position: absolute;
+            top: 0;
+            left: 0;
+            background: #EEEEEE;
+            border-radius: 50px;
+            box-shadow: inset 4px 4px 4px rgba(0, 0, 0, 0.25), inset -4px -4px 4px #FFFFFF;
+        }
+
+        .Checkbox {
+            position: relative; 
+            margin-left: auto;
+            margin-right: auto;
+            top: 50%;
+            -ms-transform: translateY(-50%);
+            transform: translateY(-50%);
+            width: 50px;
+            height: 50px;
+        }
+
+        .Checkbox label:after {
+            content: '';
+            width: 30px;
+            height: 15px;
+            position: absolute;
+            top: 15px;
+            left: 10px;
+            border: 6px solid #333;
+            border-top: none;
+            border-right: none;
+            background: transparent;
+            opacity: 0;
+            -webkit-transform: rotate(-45deg);
+                    transform: rotate(-45deg);
+        }
+        .Checkbox label:hover::after, .CheckboxSmall label:hover::after {
+            opacity: 0.5;
+        }
+
+        .Checkbox input[type=checkbox], .CheckboxSmall input[type=checkbox]  {
+            visibility: hidden;
+        }
+
+        .Checkbox input[type=checkbox]:checked + label:after, .CheckboxSmall input[type=checkbox]:checked + label:after {
+            opacity: 1;
+        }
+
+    </style>
+</head>
+<body>
+    <header>
+        <nav class='navbar navbar-expand-md navbar-dark bg-dark'>
+            <a href='/' class='navbar-brand'><h2>TODO</h2></a>
+            <button class='navbar-toggler' data-toggle="collapse" data-target='#Menu'>
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class='collapse navbar-collapse' id="Menu">
+                <ul class='navbar-nav'>
+                    <li class="nav-item">
+                        <a href='/' class='nav-link'>Home</a>
+                    </li>
+                    <li class="nav-item">
+                        <a href='/newTodo' class='nav-link'>new TODO</a>
+                    </li>
+                    <li class="nav-item">
+                        <a href='/howToEditTodo' class='nav-link'>How to edit a TODO</a>
+                    </li>
+                    <li class="nav-item">
+                        <a href='/impressum' class='nav-link'>Impressum</a>
+                    </li>
+                </ul>
+            </div>
+        </nav>
+    </header>
+
+    <div class='container Main'>
+        <h1>Your TODOs: </h1>
+        <div class='row Row'>
+            <div class='col-sm-12 col-md-6 col-lg-4 col-xl-3 Col'>
+                <div class='TODO'>
+                    <div class="TODOText">Skalable Systems Homework</div>
+                    <div class="Deadline">Deadline:   14.05.2020</div>
+                    <div class="Progress">
+                        <div class="ProgressNum">100%</div>
+                        <div class='ProgressBar'>
+                            <div class="ProgressBarBlue"></div>
+                            <div class="ProgressBarGrey"></div>
+                        </div>
+                    </div>
+                    <div class="Subtasks">
+                        <h5>Subtasks:</h5> 
+                        <div class="Subtask">
+                            <div class="CheckboxSmall">
+                                <input 
+                                    type="checkbox" 
+                                    value="None" 
+                                    id="RoundCheckbox00" 
+                                    name="check" 
+                                    checked />
+                                <label for="RoundCheckbox00"></label>
+                            </div>
+                            <div class="SubtaskText">
+                                Structure the Website with HTML                       
+                            </div>
+                        </div>
+                        <div class="Subtask">
+                            <div class="CheckboxSmall">
+                                <input 
+                                    type="checkbox" 
+                                    value="None" 
+                                    id="RoundCheckbox01" 
+                                    name="check"
+                                    checked />
+                                <label for="RoundCheckbox01"></label>
+                            </div>
+                            <div class="SubtaskText">
+                                Make everything look nice with CSS                       
+                            </div>
+                        </div>
+                        <div class="Subtask">
+                            <div class="CheckboxSmall">
+                                <input 
+                                    type="checkbox" 
+                                    value="None" 
+                                    id="RoundCheckbox02" 
+                                    name="check"
+                                    checked/>
+                                <label for="RoundCheckbox02"></label>
+                            </div>
+                            <div class="SubtaskText">
+                                Make everything responsive with Bootstrap
+                            </div>
+                        </div>
+                    </div>
+                    <div class=Buttons>
+                        <a href='./editTODO.html'><button class="EditButton">EDIT</button></a>
+                        <button class="DeleteButton">DELETE</button>
+                    </div>
+                </div>
+            </div>
+            <div class='col-sm-12 col-md-6 col-lg-4 col-xl-3 Col'>
+                <div class='TODO'>
+                    <div class="TODOText">Shopping</div>
+                    <div class="Deadline">Deadline:   14.05.2020</div>
+                    <div class="Progress">
+                        <div class="ProgressNum">50%</div>
+                        <div class='ProgressBar'>
+                            <div class="ProgressBarBlue"></div>
+                            <div class="ProgressBarGrey"></div>
+                        </div>
+                    </div>
+                    <div class="Subtasks">
+                        <h5>Subtasks:</h5> 
+                        <div class="Subtask">
+                            <div class="CheckboxSmall">
+                                <input 
+                                    type="checkbox" 
+                                    value="None" 
+                                    id="RoundCheckbox10" 
+                                    name="check" 
+                                    checked />
+                                <label for="RoundCheckbox10"></label>
+                            </div>
+                            <div class="SubtaskText">
+                                buy groceries                     
+                            </div>
+                        </div>
+                        <div class="Subtask">
+                            <div class="CheckboxSmall">
+                                <input 
+                                    type="checkbox" 
+                                    value="None" 
+                                    id="RoundCheckbox11" 
+                                    name="check" />
+                                <label for="RoundCheckbox11"></label>
+                            </div>
+                            <div class="SubtaskText">
+                                return sweater                       
+                            </div>
+                        </div>
+                    </div>
+                    <div class=Buttons>
+                        <a href='./editTODO.html'><button class="EditButton">EDIT</button></a>
+                        <button class="DeleteButton">DELETE</button>
+                    </div>
+                </div>
+            </div>
+            <div class='col-sm-12 col-md-6 col-lg-4 col-xl-3 Col'>
+                <div class='TODO'>
+                    <div class="TODOText">Finish Reading Book</div>
+                    <div class="Deadline">Deadline:   14.05.2020</div>
+                    <div class="Progress">
+                        <div class="ProgressNum">25%</div>
+                        <div class='ProgressBar'>
+                            <div class="ProgressBarBlue"></div>
+                            <div class="ProgressBarGrey"></div>
+                        </div>
+                    </div>
+                    <div class="Subtasks">
+                        <h5>Subtasks:</h5> 
+                        <div class="Subtask">
+                            <div class="CheckboxSmall">
+                                <input 
+                                    type="checkbox" 
+                                    value="None" 
+                                    id="RoundCheckbox20" 
+                                    name="check" 
+                                    checked />
+                                <label for="RoundCheckbox20"></label>
+                            </div>
+                            <div class="SubtaskText">
+                                read chapter 9                      
+                            </div>
+                        </div>
+                        <div class="Subtask">
+                            <div class="CheckboxSmall">
+                                <input 
+                                    type="checkbox" 
+                                    value="None" 
+                                    id="RoundCheckbox21" 
+                                    name="check"/>
+                                <label for="RoundCheckbox21"></label>
+                            </div>
+                            <div class="SubtaskText">
+                                read chapter 10                       
+                            </div>
+                        </div>
+                        <div class="Subtask">
+                            <div class="CheckboxSmall">
+                                <input 
+                                    type="checkbox" 
+                                    value="None" 
+                                    id="RoundCheckbox22" 
+                                    name="check"/>
+                                <label for="RoundCheckbox22"></label>
+                            </div>
+                            <div class="SubtaskText">
+                                read chapter 11                         
+                            </div>
+                        </div>
+                        <div class="Subtask">
+                            <div class="CheckboxSmall">
+                                <input 
+                                    type="checkbox" 
+                                    value="None" 
+                                    id="RoundCheckbox23" 
+                                    name="check"/>
+                                <label for="RoundCheckbox23"></label>
+                            </div>
+                            <div class="SubtaskText">
+                                read chapter 12                         
+                            </div>
+                        </div>
+                    </div>
+                    <div class=Buttons>
+                        <a href='./editTODO.html'><button class="EditButton">EDIT</button></a>
+                        <button class="DeleteButton">DELETE</button>
+                    </div>
+                </div>
+            </div>
+            <div class='col-sm-12 col-md-6 col-lg-4 col-xl-3 Col'>
+                <div class='TODO'>
+                    <div class="TODOText">Become rich</div>
+                    <div class="Deadline">Deadline:   14.05.2020</div>
+                    <div class="Progress">
+                        <div class="ProgressNum">33%</div>
+                        <div class='ProgressBar'>
+                            <div class="ProgressBarBlue"></div>
+                            <div class="ProgressBarGrey"></div>
+                        </div>
+                    </div>
+                    <div class="Subtasks">
+                        <h5>Subtasks:</h5> 
+                        <div class="Subtask">
+                            <div class="CheckboxSmall">
+                                <input 
+                                    type="checkbox" 
+                                    value="None" 
+                                    id="RoundCheckbox30" 
+                                    name="check" 
+                                    checked />
+                                <label for="RoundCheckbox30"></label>
+                            </div>
+                            <div class="SubtaskText">
+                                build Todo App                       
+                            </div>
+                        </div>
+                        <div class="Subtask">
+                            <div class="CheckboxSmall">
+                                <input 
+                                    type="checkbox" 
+                                    value="None" 
+                                    id="RoundCheckbox31" 
+                                    name="check"
+                                    />
+                                <label for="RoundCheckbox31"></label>
+                            </div>
+                            <div class="SubtaskText">
+                                drop out of college                      
+                            </div>
+                        </div>
+                        <div class="Subtask">
+                            <div class="CheckboxSmall">
+                                <input 
+                                    type="checkbox" 
+                                    value="None" 
+                                    id="RoundCheckbox32" 
+                                    name="check"/>
+                                <label for="RoundCheckbox32"></label>
+                            </div>
+                            <div class="SubtaskText">
+                                sell to Microsoft for a shit ton of money                         
+                            </div>
+                        </div>
+                    </div>
+                    <div class=Buttons>
+                        <a href='./editTODO.html'><button class="EditButton">EDIT</button></a>
+                        <button class="DeleteButton">DELETE</button>
+                    </div>
+                </div>
+            </div>
+            <div class='col-sm-12 col-md-6 col-lg-4 col-xl-3 Col'>
+                <div class='TODO'>
+                    <div class="TODOText">Clean the bathroom</div>
+                    <div class="Deadline">Deadline:   14.05.2020</div>
+                    <div class="Progress">
+                        <div class="ProgressNum">0%</div>
+                        <div class='ProgressBar'>
+                            <div class="ProgressBarBlue"></div>
+                            <div class="ProgressBarGrey"></div>
+                        </div>
+                    </div>
+                    <div class="Subtasks">
+                        <h5>Subtasks:</h5> 
+                        <div class="Subtask">
+                            <div class="CheckboxSmall">
+                                <input 
+                                    type="checkbox" 
+                                    value="None" 
+                                    id="RoundCheckbox40" 
+                                    name="check"/>
+                                <label for="RoundCheckbox40"></label>
+                            </div>
+                            <div class="SubtaskText">
+                                clean the toilet                       
+                            </div>
+                        </div>
+                        <div class="Subtask">
+                            <div class="CheckboxSmall">
+                                <input 
+                                    type="checkbox" 
+                                    value="None" 
+                                    id="RoundCheckbox41" 
+                                    name="check"/>
+                                <label for="RoundCheckbox41"></label>
+                            </div>
+                            <div class="SubtaskText">
+                                clean the sink                        
+                            </div>
+                        </div>
+                        <div class="Subtask">
+                            <div class="CheckboxSmall">
+                                <input 
+                                    type="checkbox" 
+                                    value="None" 
+                                    id="RoundCheckbox42" 
+                                    name="check"/>
+                                <label for="RoundCheckbox42"></label>
+                            </div>
+                            <div class="SubtaskText">
+                                wipe the floor
+                            </div>
+                        </div>
+                    </div>
+                    <div class=Buttons>
+                        <a href='./editTODO.html'><button class="EditButton">EDIT</button></a>
+                        <button class="DeleteButton">DELETE</button>
+                    </div>
+                </div>
+            </div>
+            <div class='col-sm-12 col-md-6 col-lg-4 col-xl-3 Col'>
+                <div class='TODO'>
+                    <div class="TODOText">Deploy the app scalable</div>
+                    <div class="Deadline">Deadline:   14.05.2020</div>
+                    <div class="Progress">
+                        <div class="ProgressNum">0%</div>
+                        <div class='ProgressBar'>
+                            <div class="ProgressBarBlue"></div>
+                            <div class="ProgressBarGrey"></div>
+                        </div>
+                    </div>
+                    <div class="Subtasks">
+                        <h5>Subtasks:</h5> 
+                        <div class="Subtask">
+                            <div class="CheckboxSmall">
+                                <input 
+                                    type="checkbox" 
+                                    value="None" 
+                                    id="RoundCheckbox50" 
+                                    name="check" />
+                                <label for="RoundCheckbox50"></label>
+                            </div>
+                            <div class="SubtaskText">
+                                build Docker images                      
+                            </div>
+                        </div>
+                        <div class="Subtask">
+                            <div class="CheckboxSmall">
+                                <input 
+                                    type="checkbox" 
+                                    value="None" 
+                                    id="RoundCheckbox51" 
+                                    name="check"/>
+                                <label for="RoundCheckbox51"></label>
+                            </div>
+                            <div class="SubtaskText">
+                                Set up Kubernetes                     
+                            </div>
+                        </div>
+                        <div class="Subtask">
+                            <div class="CheckboxSmall">
+                                <input 
+                                    type="checkbox" 
+                                    value="None" 
+                                    id="RoundCheckbox52" 
+                                    name="check"/>
+                                <label for="RoundCheckbox52"></label>
+                            </div>
+                            <div class="SubtaskText">
+                                pay AWS bill                         
+                            </div>
+                        </div>
+                    </div>
+                    <div class=Buttons>
+                        <a href='./editTODO.html'><button class="EditButton">EDIT</button></a>
+                        <button class="DeleteButton">DELETE</button>
+                    </div>
+                </div>
+            </div>
+            <div class='col-sm-12 col-md-6 col-lg-4 col-xl-3 Col'>
+                <div class='TODO'>
+                    <div class="TODOText">Write the content for the last example TODO</div>
+                    <div class="Deadline">Deadline:   14.05.2020</div>
+                    <div class="Progress">
+                        <div class="ProgressNum">66%</div>
+                        <div class='ProgressBar'>
+                            <div class="ProgressBarBlue"></div>
+                            <div class="ProgressBarGrey"></div>
+                        </div>
+                    </div>
+                    <div class="Subtasks">
+                        <h5>Subtasks:</h5> 
+                        <div class="Subtask">
+                            <div class="CheckboxSmall">
+                                <input 
+                                    type="checkbox" 
+                                    value="None" 
+                                    id="RoundCheckbox60" 
+                                    name="check" 
+                                    checked />
+                                <label for="RoundCheckbox60"></label>
+                            </div>
+                            <div class="SubtaskText">
+                                write the first subtask                       
+                            </div>
+                        </div>
+                        <div class="Subtask">
+                            <div class="CheckboxSmall">
+                                <input 
+                                    type="checkbox" 
+                                    value="None" 
+                                    id="RoundCheckbox61" 
+                                    name="check"
+                                    checked />
+                                <label for="RoundCheckbox61"></label>
+                            </div>
+                            <div class="SubtaskText">
+                                write the secont subtask                        
+                            </div>
+                        </div>
+                        <div class="Subtask">
+                            <div class="CheckboxSmall">
+                                <input 
+                                    type="checkbox" 
+                                    value="None" 
+                                    id="RoundCheckbox62" 
+                                    name="check"
+                                    checked/>
+                                <label for="RoundCheckbox62"></label>
+                            </div>
+                            <div class="SubtaskText">
+                                write third subtask                         
+                            </div>
+                        </div>
+                    </div>
+                    <div class=Buttons>
+                        <a href='./editTODO.html'><button class="EditButton">EDIT</button></a>
+                        <button class="DeleteButton">DELETE</button>
+                    </div>
+                </div>
+            </div>
+            <div class='col-sm-12 col-md-6 col-lg-4 col-xl-3 Col'>
+                <a href='newTODO.html'>
+                    <div class='TODO Add'>
+                        <h2>add TODO</h2>
+                        <svg  width="60" height="60" viewBox="0 0 80 80" fill="none" xmlns="http://www.w3.org/2000/svg">
+                            <path id='plus' d="M48 3C48 1.34315 46.6569 0 45 0H35C33.3431 0 32 1.34315 32 3V32H3C1.34315 32 0 33.3431 0 35V45C0 46.6569 1.34315 48 3 48H32V77C32 78.6569 33.3431 80 35 80H45C46.6569 80 48 78.6569 48 77V48H77C78.6569 48 80 46.6569 80 45V35C80 33.3431 78.6569 32 77 32H48V3Z" fill="#c0c0c0"/>
+                        </svg>
+                    </div>
+                </a>
+            </div>
+        </div>
+    </div>
+
+
+    
+    <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js" integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo" crossorigin="anonymous"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/js/bootstrap.min.js" integrity="sha384-OgVRvuATP1z7JjHLkuOU7Xw704+h835Lr+6QL9UvYjZE3Ipu6Tp75j7Bh/kR0JKI" crossorigin="anonymous"></script>
+    <script>
+        // $(function (){
+        //     $.ajax({
+        //         type: 'GET',
+        //         url: '/all',
+        //         success: function(data){
+        //             console.log(data);
+        //         }
+        //     })
+        // })
+    </script>
+</body>
+</html>

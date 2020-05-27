@@ -1,18 +1,42 @@
 const mongoose = require("mongoose");
-const Todo = require('./todo');                  
+const Todo = require('./todo');  
+
 
 var express = require('express');
 var path = require('path');
-var app = express();                                      
+var cors = require('cors')
+
+var app = express();     
+                                 
 
 const port = 3000;
 
 
 app.use(express.json());    
+app.use(cors())
 
+app.get('/', (req, res) => {
+  res.sendFile(path.join(__dirname + '/home.html'));
+});
+
+app.get('/newTodo', (req, res) => {
+  res.sendFile(path.join(__dirname + '/newTODO.html'));
+});
+
+app.get('/editTodo', (req, res) => {
+  res.sendFile(path.join(__dirname + '/editTODO.html'));
+});
+
+app.get('/howToEditTodo', (req, res) => {
+  res.sendFile(path.join(__dirname + '/howToEditTODO.html'));
+});
+
+app.get('/impressum', (req, res) => {
+  res.sendFile(path.join(__dirname + '/impressum.html'));
+});
 
 // get all TODOs 
-app.get('/', async (req, res, next) => {  
+app.get('/all', async (req, res, next) => {  
   let todos; 
   try{
     todos = await Todo.find({});                          // find all todos in the db

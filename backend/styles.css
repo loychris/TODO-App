@@ -1,0 +1,437 @@
+body {
+    background: #eeeeee;
+}
+
+a:hover {
+    text-decoration: none;
+    color: #212529;
+}
+
+a {
+    color: #000000;
+}
+
+header {
+    position: fixed;
+    top: 0px;
+    left: 0px;
+    right: 0px; 
+    z-index: 1000;
+    background-color: #343434;
+    color: #ffffff;
+    text-align: center;
+    box-shadow: 0px 0px 8px #000000;
+}
+
+header a {
+    color: #ffffff;
+    text-decoration: none!important;
+}
+
+h1, h2, h3, h4, input, .TODOText {
+    font-family: 'Ubuntu';
+    font-weight: 700;
+    margin-right: 10px;
+}
+
+label {
+    color: #777e86;
+    margin-bottom: 0px;
+    margin-right: 10px; 
+}
+
+.Main {
+    margin-top: 86px; 
+}
+
+.Row {
+    padding: 5px; 
+    margin-bottom: 10px; 
+}
+
+.TODO {
+    margin-bottom: 40px;
+    margin-left: 4px;
+    margin-right: 4px;
+    padding: 20px; 
+    box-shadow: 6px 6px 6px rgba(0, 0, 0, 0.25), -6px -6px 6px #FFFFFF;
+    border-radius: 20px;
+    background: #eeeeee;
+}
+
+.newTODO {
+    box-shadow: 6px 6px 6px rgba(0, 0, 0, 0.25), -6px -6px 6px #FFFFFF;
+    border-radius: 20px;
+    padding: 20px; 
+    margin-top: 20px;
+    margin-bottom: 100px;
+    background: #eeeeee;
+
+}
+
+.TODO:hover{
+    box-shadow: 10px 10px 10px rgba(0, 0, 0, 0.25), -10px -10px 10px #FFFFFF;
+
+}
+
+.TODOText {
+    font-weight: 300;
+    font-size: 20px;
+    line-height: 22px;
+    margin-bottom: 10px; 
+}
+
+.Deadline{
+    font-family: Roboto;
+    font-weight: normal;
+    font-size: 14px;
+    line-height: 16px;
+    text-align: right;
+    margin-bottom: 15px; 
+    color: #666666;
+
+}
+
+.Progress {
+    font-family: Roboto;
+    font-size: 12px;
+    margin-bottom: 10px;
+    display: flex; 
+    justify-content: space-between;
+}
+
+.ProgressNum {
+    font-family: Roboto;
+    font-weight: normal;
+    font-size: 12px;
+    line-height: 14px;
+    text-align: left;
+}
+
+.ProgressBar {
+    position: relative;
+    width: 86%;
+    height: 12px;
+    margin-bottom: 15px; 
+}
+
+.ProgressBarGrey {
+    position: absolute;
+    top: 0;
+    left: 0;
+    height: 12px;
+    width: 100%;
+    background: #C4C4C4;
+    border-radius: 6px;
+}
+
+.ProgressBarBlue {
+    position: absolute;
+    top: 0;
+    left: 0;
+    z-index: 2;
+    float: left;
+    height: 12px;
+    width: 68%;
+    background: #5BA6FF;
+    border-radius: 6px;
+}
+
+.Subtasks {
+    margin-left: -20px;
+    margin-right: -20px;
+    margin-bottom: 20px;
+    padding-left: 20px;
+    padding-right: 20px;
+
+}
+
+.Buttons {
+    display: flex; 
+    justify-content: space-between;
+}
+
+.Buttons button {
+    text-decoration: none;
+    cursor: pointer;
+    text-align: center; 
+    all: unset;
+    height: 30px;
+    padding-left: 15px;
+    padding-right: 15px; 
+    background: #eeeeee;
+    box-shadow: 4px 4px 4px rgba(0, 0, 0, 0.25), -4px -4px 4px #FFFFFF;
+    border-radius: 20px;
+}
+
+.Button {
+    text-decoration: none;
+    cursor: pointer;
+    text-align: center; 
+    all: unset;
+    height: 30px;
+    padding-left: 15px;
+    padding-right: 15px; 
+    background: #eeeeee;
+    box-shadow: 4px 4px 4px rgba(0, 0, 0, 0.25), -4px -4px 4px #FFFFFF;
+    border-radius: 20px;
+}
+
+.Buttons button:hover, Button:hover, input[type=submit]:hover {
+    height: 34px;
+    margin-top: -2px;
+    margin-bottom: -2px;
+    box-shadow: 8px 8px 8px rgba(0, 0, 0, 0.25), -8px -8px 8px #FFFFFF;
+}
+
+.Buttons button:active {
+    box-shadow: 4px 4px 4px rgba(0, 0, 0, 0.25), -4px -4px 4px #FFFFFF;
+}
+
+.DeleteButton{
+    color: red;
+    border: 1px solid red; 
+}
+
+.Add {
+    cursor: pointer;
+    text-align: center; 
+    color: #c0c0c0;
+}
+
+.Add:hover {
+    color: #53595f;
+    text-decoration: none;
+}
+
+.Add:hover #plus {
+    fill: #53595f;
+}
+
+/*      newTODO  /  editTODO     */
+
+.Subtask {
+    box-shadow: 4px 4px 4px rgba(0, 0, 0, 0.25), -4px -4px 4px #FFFFFF;
+    border-radius: 9px;
+    padding: 10px;
+    margin-left: 0px;
+    margin-right: 0px;
+    margin-bottom: 25px; 
+    background-color: #eeeeee;
+    position: relative; 
+}
+
+.X {
+    position: absolute;
+    right: 3px;
+    top: 3px; 
+}
+
+.X:hover path{
+    fill: #000000; 
+}
+
+input {
+    background-color: #ffffff;
+    box-shadow: inset 3px 3px 3px rgba(0, 0, 0, 0.25), inset -3px -3px 3px #FFFFFF;
+    border-radius: 15px; 
+    font-size: 15pt;
+    border: none;
+    padding-left: 10px;
+    padding-right: 10px; 
+}
+
+input[type=text], input[type=textarea]{
+    width: 100%;
+    padding-top: 4px;
+    padding-bottom: 4px;  
+
+    margin-bottom: 10px; 
+}
+
+input[type=textarea]{
+    border-radius: 20px;
+}
+
+input[type=number]{
+    width: 70px; 
+}
+
+input[type=submit]{
+    text-decoration: none;
+    cursor: pointer;
+    text-align: center; 
+    all: unset;
+    height: 30px;
+    padding-left: 15px;
+    padding-right: 15px; 
+    margin-right: 15px; 
+    background: rgb(150, 248, 159);
+    box-shadow: 4px 4px 4px rgba(0, 0, 0, 0.25), -4px -4px 4px #FFFFFF;
+    border-radius: 20px;
+}
+
+.SubTasks {
+    margin-top: 50px; 
+    margin-bottom: 20px; 
+}
+
+#description {
+    font-size: 30px; 
+    font-family: "Ubuntu";
+}
+
+.Submit {
+    display: felx; 
+}
+
+.RangeContainer {
+    text-align: center;
+    position: relative;
+    height: 40px;
+    width: 100%;
+    display: block; 
+}
+
+.RangeOutput {
+    float: left; 
+    position: absolute;
+    margin-top: 5px;
+    width: 100%;
+    pointer-events:none;
+} 
+
+.RangeInput {
+    position: absolute; 
+    margin-top: 5px;
+    left: 5px;
+    right: 5px;
+}
+
+input[type=range]{
+    box-shadow: none;
+    padding: 0px;
+}
+
+.Slider {
+    -webkit-appearance: none;
+    width: 100%;
+    height: 25px;
+    background: #d3d3d3;
+    outline: none;
+    opacity: 0.7;
+    -webkit-transition: .2s;
+    transition: opacity .2s;
+}
+  
+.Slider:hover {
+    opacity: 1;
+}
+  
+.Slider::-webkit-slider-thumb {
+    -webkit-appearance: none;
+    appearance: none;
+    width: 40px;
+    height: 40px;
+    border-radius: 100%; 
+    background: #5BA6FF;
+    cursor: pointer;
+}
+  
+.Slider::-moz-range-thumb {
+    width: 40px;
+    height: 40px;
+    border-radius: 100%; 
+    background: #5BA6FF;
+    cursor: pointer;
+}
+
+.CheckboxSmall {
+    position: relative; 
+    width: 20px;
+    height: 20px;
+    margin-right: 10px;
+    float: left;
+}
+
+.CheckboxSmall label {
+    width: 20px;
+    height: 20px;
+    margin-left: auto;
+    margin-bottom: 4px; 
+    cursor: pointer;
+    position: absolute;
+    top: 0;
+    left: 0;
+    background: #EEEEEE;
+    border-radius: 50px;
+    box-shadow: inset 4px 4px 4px rgba(0, 0, 0, 0.25), inset -4px -4px 4px #FFFFFF;
+}
+
+.CheckboxSmall label:after {
+    content: '';
+    width: 12px;
+    height: 7px;
+    position: absolute;
+    top: 6px;
+    left: 4px;
+    border: 3px solid #333;
+    border-top: none;
+    border-right: none;
+    background: transparent;
+    opacity: 0;
+    -webkit-transform: rotate(-45deg);
+            transform: rotate(-45deg);
+}
+
+.Checkbox label {
+    width: 50px;
+    height: 50px;
+    margin-right: auto;
+    margin-bottom: 25px; 
+    cursor: pointer;
+    position: absolute;
+    top: 0;
+    left: 0;
+    background: #EEEEEE;
+    border-radius: 50px;
+    box-shadow: inset 4px 4px 4px rgba(0, 0, 0, 0.25), inset -4px -4px 4px #FFFFFF;
+}
+
+.Checkbox {
+    position: relative; 
+    margin-left: auto;
+    margin-right: auto;
+    top: 50%;
+    -ms-transform: translateY(-50%);
+    transform: translateY(-50%);
+    width: 50px;
+    height: 50px;
+}
+
+.Checkbox label:after {
+    content: '';
+    width: 30px;
+    height: 15px;
+    position: absolute;
+    top: 15px;
+    left: 10px;
+    border: 6px solid #333;
+    border-top: none;
+    border-right: none;
+    background: transparent;
+    opacity: 0;
+    -webkit-transform: rotate(-45deg);
+            transform: rotate(-45deg);
+}
+.Checkbox label:hover::after, .CheckboxSmall label:hover::after {
+    opacity: 0.5;
+}
+
+.Checkbox input[type=checkbox], .CheckboxSmall input[type=checkbox]  {
+    visibility: hidden;
+}
+
+.Checkbox input[type=checkbox]:checked + label:after, .CheckboxSmall input[type=checkbox]:checked + label:after {
+    opacity: 1;
+}
